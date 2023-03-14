@@ -3,9 +3,11 @@ import React from 'react';
 function ScreenReplication() {
   return (
     <iframe
-      src="https://www.example.com/"
+      src="http://localhost:3000/"
+      allowFullScreen="true"
+      scrolling='no'
       title="Example Website"
-      width="100%"
+      width="500px"
       height="600px"
       frameBorder="0"
     />
