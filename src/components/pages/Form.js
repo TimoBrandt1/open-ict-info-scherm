@@ -8,17 +8,19 @@ function FormBasic() {
     const [header, setHeader] = useState('');
     const [body, setBody] = useState('');
     const [footer, setFooter] = useState('');
-
+    const [iframe, setIframe] = useState(1);
+    console.log(iframe);
     const handleChange = (setFunction, e) => {
         setFunction(e.target.value);
     }
+
 
     const saveData = () => { // save on cookies
         console.log(header, body, footer)
         document.cookie = `header=${header}`;
         document.cookie = `body=${body}`;
         document.cookie = `footer=${footer}`;
-        window.location = "/screen"
+        setIframe(iframe + 1);
     }
 
     return (
@@ -36,6 +38,10 @@ function FormBasic() {
                 </Form.Field>
                 <Button type='submit'>Submit</Button>
             </Form>
+
+            <iFrame key={iframe} src="http://localhost:3000/screen" width="20%" height="200px"></iFrame>
+
+            <Button href="/screen">Go to Screen</Button>
         </div>
     );
 };
