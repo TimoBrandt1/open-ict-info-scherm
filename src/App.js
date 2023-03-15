@@ -3,14 +3,15 @@ import './App.css';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/pages/Layout";
-import Screen from './components/pages/Screen'
+import Dashboard from './components/pages/Dashboard';
+import Screen from './components/pages/Screen';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Dashboard />} />
           <Route index element={<Screen />} />
         </Route>
       </Routes>
