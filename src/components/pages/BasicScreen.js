@@ -2,11 +2,25 @@ import React from 'react'
 import '../../App.css'
 
 function BasicScreen() {
-    const data = { // get cookies with names, header, body, footer
-        header: document.cookie.split('; ').find(row => row.startsWith('header')).split('=')[1],
-        body: document.cookie.split('; ').find(row => row.startsWith('body')).split('=')[1],
-        footer: document.cookie.split('; ').find(row => row.startsWith('footer')).split('=')[1],
+    const getCookie = (name) => { // get cookie by name
+        return document.cookie.split('; ').find(row => row.startsWith(name)).split('=')[1];
     }
+    const data = { // get cookies with names, header, body, footer
+        header: getCookie('header'),
+        body: getCookie('body'),
+        footer: getCookie('footer')
+    }
+
+
+
+    let checkCookie = () => { // check if cookies are not the same as data
+        if (data.header !== getCookie('header') || data.body !== getCookie('body') || data.footer !== getCookie('footer')) {
+            // reload page
+            window.location.reload();
+        }
+    }
+
+    window.setInterval(checkCookie, 1000); // check every second (1000ms
 
 
     return (
