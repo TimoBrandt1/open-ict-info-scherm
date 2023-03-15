@@ -39,9 +39,9 @@ function FormBasic() {
                 <Button type='submit'>Submit</Button>
             </Form>
 
-            <iFrame key={iframe} src="http://localhost:3000/screen" width="20%" height="200px"></iFrame>
+            <iFrame key={iframe} src="http://localhost:3000/formscreen" width="20%" height="200px"></iFrame>
 
-            <Button href="/screen">Go to Screen</Button>
+            <Button href="/formscreen">Go to Screen</Button>
         </div>
     );
 };

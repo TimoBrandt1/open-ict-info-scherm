@@ -1,24 +1,23 @@
+// import logo from './logo.svg';
 import './App.css';
 
-// imports 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-// components
-import Layout from './components/pages/Layout';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/pages/Layout";
+import Dashboard from './components/pages/Dashboard';
 import Screen from './components/pages/Screen';
-import FormBasic from './components/pages/Form';
 import BasicScreen from './components/pages/BasicScreen';
-
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />} >
-          <Route index element={<FormBasic />} />
+          <Route index element={<Dashboard />} />
         </Route>
-
         <Route path="screen" element={<Layout />} >
+          <Route index element={<Screen />} />
+        </Route>
+        <Route path="formscreen" element={<Layout />} >
           <Route index element={<BasicScreen />} />
         </Route>
         <Route path="*" element={<h1>404: Not Found</h1>} />
