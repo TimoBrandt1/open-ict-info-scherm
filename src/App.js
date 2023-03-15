@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+
+// imports 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// components
+import Layout from './components/pages/Layout';
+import Screen from './components/pages/Screen';
+import FormBasic from './components/pages/Form';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Screen />} />
+        </Route>
+
+        <Route path="form" element={<Layout />} >
+          <Route index element={<FormBasic />} />
+        </Route>
+        <Route path="*" element={<h1>404: Not Found</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
