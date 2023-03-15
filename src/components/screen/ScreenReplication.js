@@ -1,16 +1,16 @@
 import React from 'react';
+import './ScreenReplication.css';
 
 function ScreenReplication() {
   return (
-    <iframe
-      src="http://example.com"
+    <div class="screenReplication-wrap">
+      <iframe class="wrapped-iframe"
+      src="http://localhost:3000/Screen"
       allowFullScreen="true"
       scrolling='no'
       title="Example Website"
-      width="500px"
-      height="600px"
-      frameBorder="0"
-    />
+      />
+    </div>
   );
 }
 

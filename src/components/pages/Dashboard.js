@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../App.css'
+import './Dashboard.css';
 import Navbar from "../dashboard/NavBar";
 import ScreenReplication from '../screen/ScreenReplication';
 

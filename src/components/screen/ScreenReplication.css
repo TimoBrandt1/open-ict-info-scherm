@@ -1,0 +1,11 @@
+.screenReplication-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .wrapped-iframe {
+    position: fixed;
+    width: 500px;
+    height: 300px;
+    border: 1;
+  }

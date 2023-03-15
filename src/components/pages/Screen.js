@@ -1,14 +1,12 @@
 import React from 'react'
 import '../../App.css'
+import './Screen.css';
+import DebugSlide from '../screen/DebugSlide';
 
 function Screen() {
     return (
         <div>
-            <h1 className='Screen'>Screen Page</h1>
-            <h2>Waiting for slides</h2>
-            <h3>Screen name:</h3>
-            <h3>Screen id:</h3>
-            <h3>Group name:</h3>
+            <DebugSlide/>
         </div>
     );
 }
