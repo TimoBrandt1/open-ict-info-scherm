@@ -18,6 +18,7 @@ function FormBasic() {
         document.cookie = `header=${header}`;
         document.cookie = `body=${body}`;
         document.cookie = `footer=${footer}`;
+        window.location = "/screen"
     }
 
     return (
