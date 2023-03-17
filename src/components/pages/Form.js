@@ -17,9 +17,9 @@ function FormBasic() {
 
     const saveData = () => { // save on cookies
         console.log(header, body, footer)
-        document.cookie = `header=${header}`;
-        document.cookie = `body=${body}`;
-        document.cookie = `footer=${footer}`;
+        localStorage.setItem('header', header);
+        localStorage.setItem('body', body);
+        localStorage.setItem('footer', footer);
         setIframe(iframe + 1);
     }
 
