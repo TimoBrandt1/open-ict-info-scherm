@@ -10,7 +10,7 @@ function Dashboard() {
         <div>
             <h1 className='Screen'>Dashboard Page</h1>
             <Navbar />
-            <ScreenReplication src="http://localhost:3000/screen"/>
+            <ScreenReplication src="/screen"/>
             <FormKennisdeling />
         </div>
     );

@@ -16,7 +16,7 @@ function FormKennisdeling() {
     return (
         <div>
             <FormBasic initialValues={initialValues} storageKeyPrefix={storageKeyPrefix} />
-            <ScreenReplication src="http://localhost:3000/formscreen" />
+            <ScreenReplication src="/formscreen" />
         </div>
     );
 } 
