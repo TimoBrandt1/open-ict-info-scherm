@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/pages/Layout";
 import Dashboard from './components/pages/Dashboard';
 import Screen from './components/pages/Screen';
-import BasicScreen from './components/pages/BasicScreen';
+import KennisdelingScreen from './components/screen/KennisdelingScreen';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route index element={<Screen />} />
         </Route>
         <Route path="formscreen" element={<Layout />} >
-          <Route index element={<BasicScreen />} />
+          <Route index element={<KennisdelingScreen />} />
         </Route>
         <Route path="*" element={<h1>404: Not Found</h1>} />
       </Routes>
