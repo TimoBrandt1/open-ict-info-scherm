@@ -2,8 +2,8 @@ import React from 'react'
 import '../../App.css'
 import './Dashboard.css';
 import Navbar from "../dashboard/NavBar";
-import ScreenReplication from '../screen/ScreenReplication';
-import FormKennisdeling from '../Forms/FormKennisdeling';
+import ScreenReplication from '../components/screen/ScreenReplication';
+import FormKennisdeling from '../components/Forms/FormKennisdeling';
 
 function Dashboard() {
     return (
