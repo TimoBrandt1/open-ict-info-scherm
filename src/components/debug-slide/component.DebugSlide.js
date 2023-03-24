@@ -1,15 +1,17 @@
 import React from 'react';
 import './style.DebugSlide.scss';
+import MainTitle from '../main-title/component.MainTitle'
+import TextBlock from '../text-block/component.TextBlock'
+import Video from '../video/component.Video'
 
-function DebugSlide() {
+function DebugSlide({ScreenName,GroupName,CurrentSlide}) {
   return (
-    <div>
-      <h1 className='Screen'>Debug Page</h1>
-            <h2>Waiting for slides</h2>
-            <h3>Screen name: Screen 1</h3>
-            <h3>Screen id: 1</h3>
-            <h3>Group name: First Group</h3>
-            <h3>Current slide: No slide</h3>
+    <div class="debug-content">
+      <MainTitle titleText={"Waiting for slides..."} titleSize={''}/>
+      <Video vSrc={"../../../public/videos/DebugSlideVideo.mp4"} vType={"video/mp4"} vWidth={"500"} vHeight={"500"}/>
+      <TextBlock blockText={"Screen name: "+ ScreenName} titleSize={''}/>
+      <TextBlock blockText={"Group name: "+ GroupName} titleSize={''}/>
+      <TextBlock blockText={"Current slide: "+ CurrentSlide} titleSize={''}/>
     </div>
   );
 }
