@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import './SlideShow.css';
-import DebugSlide from './DebugSlide';
-import KennisDelingSlide from "./KennisdelingSlide";
+import './style.SlideShow.scss';
+import DebugSlide from '../debug-slide/component.DebugSlide';
+import KennisDelingSlide from "../kennisdeling-slide/component.KennisdelingSlide";
 
 function Slideshow() {
   const [currentIndex, setCurrentIndex] = useState(0);

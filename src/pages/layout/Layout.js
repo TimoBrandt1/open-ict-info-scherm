@@ -1,5 +1,5 @@
 import React from "react";
-import './Layout.css';
+import './style.Layout.scss';
 import {Outlet} from "react-router-dom";
 
 const Layout = () => {

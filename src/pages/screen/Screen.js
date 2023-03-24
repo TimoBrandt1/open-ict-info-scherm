@@ -1,7 +1,7 @@
 import React from 'react'
-import '../../App.css'
-import './Screen.css';
-import Slideshow from '../components/screen/SlideShow';
+import '../../App.scss'
+import './style.Screen.scss';
+import Slideshow from '../../components/slideshow/component.SlideShow';
 
 function Screen() {
     return (

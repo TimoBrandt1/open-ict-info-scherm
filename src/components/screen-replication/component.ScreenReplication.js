@@ -1,5 +1,5 @@
 import React from 'react';
-import './ScreenReplication.css';
+import './style.ScreenReplication.scss';
 import { useState } from 'react'
 
 function ScreenReplication(src) {

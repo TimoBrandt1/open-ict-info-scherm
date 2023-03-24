@@ -1,5 +1,5 @@
 import React from 'react';
-import './DebugSlide.css';
+import './style.DebugSlide.scss';
 
 function DebugSlide() {
   return (

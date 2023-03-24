@@ -1,5 +1,5 @@
 import React from 'react';
-import './KennisdelingSlide.css';
+import './style.KennisdelingSlide.scss';
 
 function KennisDelingSlide() {
   return (
