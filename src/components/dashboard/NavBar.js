@@ -1,11 +1,14 @@
 import React from "react";
-import './NavBar.css';
+import './NavBar.scss';
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav>
-      <ul>
+    <nav class="closeable">
+      <close>
+        <span>close</span>
+      </close>
+      <ul class="closeable">
         <li>
           <Link to="/">Dashboard</Link>
         </li>
