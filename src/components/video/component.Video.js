@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.Video.scss';
 
-function Video({vSrc,vType,vWidth,vHeight,vAutoplay,vControls,vMuted}) {
+function Video({vSrc, vType, vWidth, vHeight, vAutoplay, vControls, vMuted}) {
   return (
-      <video width={vWidth} height={vHeight} >
-        <source src={vSrc} type={vType}></source>
+      <video width={vWidth} height={vHeight} autoPlay={vAutoplay} controls={vControls} muted={vMuted}>
+        <source src={process.env.PUBLIC_URL + vSrc?.src} type={vType?.type} />
         Your browser does not support the video tag.
       </video>
   );

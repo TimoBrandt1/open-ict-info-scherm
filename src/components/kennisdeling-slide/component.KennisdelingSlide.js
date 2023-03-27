@@ -1,15 +1,17 @@
 import React from 'react';
 import './style.KennisdelingSlide.scss';
+import MainTitle from '../main-title/component.MainTitle'
+import TextBlock from '../text-block/component.TextBlock'
 
-function KennisDelingSlide() {
+function KennisDelingSlide({Subject,Speaker,Time,Location,Details}) {
   return (
-    <div>
-      <h1 className='Screen'>Kennisdeling Page</h1>
-            <h2>Onderwerp: AI</h2>
-            <h3>Spreker: Naam Achternaam</h3>
-            <h3>Tijd: 00:00</h3>
-            <h3>Locatie: K0.94</h3>
-            <h4>Detail: Lorum ipsum, Lorum ipsum, Lorum ipsum, Lorum ipsum, Lorum ipsum. </h4>
+    <div class="kennisdeling-wrapper">
+      <MainTitle titleText={"Kennisdeling Page"} titleSize={'h1'} className={"main-title"}/>
+      <TextBlock blockText={"Subject: "+ Subject} titleSize={'h3'}/>
+      <TextBlock blockText={"Speaker: "+ Speaker} titleSize={'h3'}/>
+      <TextBlock blockText={"Time: "+ Time} titleSize={'h3'}/>
+      <TextBlock blockText={"Location: "+ Location} titleSize={'h3'}/>
+      <TextBlock blockText={"Details: "+ Details} titleSize={'h3'}/>
     </div>
   );
 }

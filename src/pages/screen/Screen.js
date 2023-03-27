@@ -6,7 +6,7 @@ import Slideshow from '../../components/slideshow/logic/component.SlideShow_Logi
 function Screen() {
     return (
         <div className='Screen-Content'>
-            <Slideshow/>
+            <Slideshow SecondsBetweenSlides={15}/>
         </div>
     );
 }

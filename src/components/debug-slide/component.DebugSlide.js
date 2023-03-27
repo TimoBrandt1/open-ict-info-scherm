@@ -4,14 +4,16 @@ import MainTitle from '../main-title/component.MainTitle'
 import TextBlock from '../text-block/component.TextBlock'
 import Video from '../video/component.Video'
 
-function DebugSlide({ScreenName,GroupName,CurrentSlide}) {
+function DebugSlide({ScreenName,GroupName,CurrentSlide,VideoAtributes}) {
   return (
     <div class="debug-content">
-      <MainTitle titleText={"Waiting for slides..."} titleSize={''}/>
-      <Video vSrc={"../../../public/videos/DebugSlideVideo.mp4"} vType={"video/mp4"} vWidth={"500"} vHeight={"500"}/>
-      <TextBlock blockText={"Screen name: "+ ScreenName} titleSize={''}/>
-      <TextBlock blockText={"Group name: "+ GroupName} titleSize={''}/>
-      <TextBlock blockText={"Current slide: "+ CurrentSlide} titleSize={''}/>
+      <MainTitle titleText={"Waiting for slides..."} titleSize={'h1'}/>
+      <Video {...VideoAtributes}/>
+      <footer class="debug-information">
+        <TextBlock blockText={"Screen name: "+ ScreenName} titleSize={'h3'}/>
+        <TextBlock blockText={"Group name: "+ GroupName} titleSize={'h3'}/>
+        <TextBlock blockText={"Current slide: "+ CurrentSlide} titleSize={'h3'}/>
+      </footer>
     </div>
   );
 }
