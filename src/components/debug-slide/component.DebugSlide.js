@@ -10,7 +10,7 @@ function DebugSlide({ScreenName,GroupName,CurrentSlide,VideoAtributes}) {
       <MainTitle titleText={"Waiting for slides..."} titleSize={'h1'}/>
       <Video {...VideoAtributes}/>
       <footer class="debug-information">
-        <TextBlock blockText={"Screen name: "+ ScreenName} titleSize={'h3'}/>
+        <TextBlock blockText={"Screen name: "+ ScreenName} titleSize={'h3'} className={"test"}/>
         <TextBlock blockText={"Group name: "+ GroupName} titleSize={'h3'}/>
         <TextBlock blockText={"Current slide: "+ CurrentSlide} titleSize={'h3'}/>
       </footer>
