@@ -14,9 +14,26 @@ function FormBasic({initialValues, storageKeyPrefix}) {
         setFormValues({ ...formValues, [name]: value });
     };
 
+    console.log(formValues);
+
     const saveData = () => { // save the data to local storage with the prefix
         Object.keys(formValues).forEach((key) => {
-            localStorage.setItem(`${storageKeyPrefix}-${key}`, formValues[key]);
+            // make post request to server
+            fetch('/api/formKennisdeling', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formValues)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    }
+                );
         });
     }
 
