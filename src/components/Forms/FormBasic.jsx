@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../App.css'
 import { Form, Button } from 'semantic-ui-react'
 import { useState } from 'react'
 

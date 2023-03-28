@@ -1,5 +1,5 @@
 import FormBasic from "./FormBasic";
-import ScreenReplication from "../screen/ScreenReplication";
+import ScreenReplication from "../screen-replication/component.ScreenReplication";
 
 const initialValues = {
     onderwerp: '',

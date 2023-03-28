@@ -1,10 +1,10 @@
 // import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/pages/Layout";
-import Dashboard from './components/pages/Dashboard';
-import Screen from './components/pages/Screen';
+import Layout from "./pages/layout/Layout";
+import Dashboard from './pages/dashboard/Dashboard';
+import Screen from './pages/screen/Screen';
 import KennisdelingScreen from './components/screen/KennisdelingScreen';
 
 function App() {
