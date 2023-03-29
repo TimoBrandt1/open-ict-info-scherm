@@ -2,7 +2,7 @@ import BasicScreen from "./BasicScreen";
 
 function KennisdelingScreen() {
     return (
-        <BasicScreen storageKeyPrefix="FormKennisdeling" />
+        <BasicScreen id="2" />
     );
 }
 

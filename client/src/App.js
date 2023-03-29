@@ -6,6 +6,7 @@ import Layout from "./components/pages/Layout";
 import Dashboard from './components/pages/Dashboard';
 import Screen from './components/pages/Screen';
 import KennisdelingScreen from './components/screen/KennisdelingScreen';
+import Screens from './components/pages/Screens'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           <Route index element={<KennisdelingScreen />} />
         </Route>
         <Route path="*" element={<h1>404: Not Found</h1>} />
+        <Route path="screens" element={<Layout />} >
+          <Route index element={<Screens />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

@@ -64,6 +64,38 @@ app.get('/formKennisdeling/:id', (req, res) => {
     );
 });
 
+app.get('/getMaxId', (req, res) => {
+    connection.query(
+        'SELECT MAX(id) FROM `formKennisdeling`',
+        (err, results) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log(results);
+                res.send(results);
+
+            }
+        }
+    );
+});
+
+app.delete('/deleteScreen/:id', (req, res) => {
+    connection.query(
+        'DELETE FROM `formKennisdeling` WHERE `id` = ?',
+        [req.params.id],
+        (err, results) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log(results);
+                res.send(results);
+            }
+        }
+    );
+});
+
+
+
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
