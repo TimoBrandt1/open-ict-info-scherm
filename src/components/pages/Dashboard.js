@@ -9,9 +9,13 @@ function Dashboard() {
     return (
         <div>
             <h1 className='Screen-Dashboard'>Dashboard Page | Welkom!</h1>
-            <Navbar/>
-            <ScreenReplication/>
-            <FormBasic/>
+            <wrapper>
+                <Navbar/>
+                <content>
+                    <ScreenReplication/>
+                    <FormBasic/>
+                </content>
+            </wrapper>
             
         </div>
     );

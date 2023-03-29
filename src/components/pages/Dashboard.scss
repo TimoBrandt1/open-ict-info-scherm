@@ -11,8 +11,31 @@
     position:           sticky;
     top:                0px;
     z-index:            5;
+    @media (max-width: 480px){
+        font-size: 25px;
+    }
 }
 
 h1 {
     margin-bottom: 0px;
+}
+
+wrapper {
+    
+    position:           fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 90px;
+
+}
+
+
+content {
+    display: block;
+    float: left;
+    right: 0px;
+//    padding: 30px;
+    overflow: scroll;
+    height: 100%;
 }
