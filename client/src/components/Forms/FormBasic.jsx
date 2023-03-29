@@ -17,9 +17,8 @@ function FormBasic({initialValues, storageKeyPrefix}) {
     console.log(formValues);
 
     const saveData = () => { // save the data to local storage with the prefix
-        Object.keys(formValues).forEach((key) => {
             // make post request to server
-            fetch('/api/formKennisdeling', {
+            fetch('http://145.89.192.107/api/formKennisdeling', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -34,7 +33,7 @@ function FormBasic({initialValues, storageKeyPrefix}) {
                         console.error('Error:', error);
                     }
                 );
-        });
+
     }
 
     const handleSubmit = (e) => {

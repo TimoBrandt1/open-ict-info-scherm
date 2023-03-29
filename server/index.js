@@ -1,9 +1,14 @@
 // server.js
 const express = require('express');
 const mysql2 = require('mysql2');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3000;
+
+app.use(cors());
+app.use(bodyParser.json());
 
 const connection = mysql2.createConnection({
     host: 'localhost',
