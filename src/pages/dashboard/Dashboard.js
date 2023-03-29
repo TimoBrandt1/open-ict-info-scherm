@@ -8,7 +8,7 @@ import FormKennisdeling from '../../components/forms/FormKennisdeling';
 function Dashboard() {
     return (
         <div>
-            <h1 className='Screen'>Dashboard Page</h1>
+            <h1 className='Screen'>Dashboard Page | Welkom!</h1>
             <wrapper>
                 <Navbar />
                 <content>
