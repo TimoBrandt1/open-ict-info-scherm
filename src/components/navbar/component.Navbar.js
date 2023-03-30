@@ -2,10 +2,34 @@ import React from "react";
 import './style.Navbar.scss';
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
+
+function closeNavbar() {
+  const closing = document.getElementsByClassName("closeable"); 
+
+var opened = closing[0].classList.contains("closed");
+
+if (opened) {
+  for(let i=0; i < closing.length; i++){
+    closing[i].classList.remove("closed");
+    }
+
+} else {
+  console.log(closing);
+  for(let i=0; i < closing.length; i++){
+  closing[i].className += " closed";
+  }
+}
+
+}
+
 function Navbar() {
   return (
-    <nav>
-      <ul>
+    <nav class="closeable">
+      <close class="closeable" onClick={closeNavbar}>
+      <arrow><img src={process.env.PUBLIC_URL+"images/arrow.png"} /></arrow>
+      </close>
+      <ul class="closeable">
+
         {/* Startpagina dashboard DOM */}
         <li>
           <Link to="/">Dashboard startpagina</Link>
@@ -15,7 +39,7 @@ function Navbar() {
           <Link to="/Screen">Scherm pagina</Link>
         </li> 
       </ul>
-      <ul>
+      <ul class="closeable">
         {/* Scherm Navigation DOM*/}
         <li>
           <Link to="/">Scherm Beheer</Link>
@@ -44,7 +68,7 @@ function Navbar() {
           </ul>
         </li>
       </ul>
-      <ul>
+      <ul class="closeable">
         {/* Settings DOM */}
         <li>
           <Link to="/">Instellingen knop</Link>
@@ -53,6 +77,7 @@ function Navbar() {
         <li>
           <Link to="/">Uitloggen knop</Link>
         </li>
+
       </ul>
     </nav>
   );
