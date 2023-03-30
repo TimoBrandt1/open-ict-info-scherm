@@ -64,20 +64,23 @@ app.get('/formKennisdeling/:id', (req, res) => {
     );
 });
 
-app.get('/getMaxId', (req, res) => {
-    connection.query(
-        'SELECT MAX(id) FROM `formKennisdeling`',
+
+app.get('/formkennisdeling', (req, res) => {
+    connection.query( // get everything where id is lower or equal to the given id
+        'SELECT * FROM `formKennisdeling` WHERE `id` <= ?',
+        [req.params.id],
         (err, results) => {
             if (err) {
                 console.log(err);
             } else {
                 console.log(results);
                 res.send(results);
-
             }
         }
     );
 });
+
+
 
 app.delete('/deleteScreen/:id', (req, res) => {
     connection.query(

@@ -4,23 +4,15 @@ import { Button } from "semantic-ui-react";
 import BasicScreen from "../screen/BasicScreen";
 
 function Screens () {
-    const [maxId, setMaxId] = useState(0);
 
-    const getMaxId = async () => {
-        const response = await fetch('http://145.89.192.107/api/getMaxId');
-        const data = await response.json();
-        if (data[0]['MAX(id)'] === null || data[0]['MAX(id)'] === undefined) {
-            setMaxId(0);
-        }
-        
-        else {
-            setMaxId(data[0]['MAX(id)']);
-        }
-
+    const [data, setData] = useState([]); // array of objects
+    const getData = async () => {
+            const response = await fetch('http://145.89.192.107/api/formkennisdeling');
+            const singleData = await response.json();
+            setData(singleData);
     }
-
     useEffect(() => {
-        getMaxId();
+        getData();
     }, []);
 
     const deleteScreen = (id) => {
@@ -43,14 +35,15 @@ function Screens () {
 
     }
 
-    if (maxId !== 0) {
+    if (data.length !== 0) {
 
     return (
+                //<BasicScreen id={id+1} />
         <div>
-            {Array.from(Array(maxId).keys()).map((id) => (
+            {Array.from(Array(data.length).keys()).map((id) => (
                 <div>
                 <div style={{border: "1px solid black"}}>
-                <BasicScreen id={id+1} />
+                    <BasicScreen data={data[id]} />
                 </div>
                 <button onClick={() => deleteScreen(id+1)}>Delete</button>
                 </div>
