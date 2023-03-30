@@ -9,11 +9,13 @@ function Slideshow({SecondsBetweenSlides}) {
   const videoProps = {
     vSrc: { src: "videos/DebugSlideVideo.mp4" },
     vType: { type: "video/mp4" },
-    vWidth: 640,
-    vHeight: 360,
+    vWidth: 1680,
+    vHeight: 720,
     vAutoplay: true,
     vControls: false,
-    vMuted: true
+    vMuted: true,
+    vLoop: true,
+
   };
   const debugSlideInfo = {
     ScreenName: 'Screen 1',
@@ -34,8 +36,8 @@ function Slideshow({SecondsBetweenSlides}) {
   
   // Needs to be able to get Slide array in the future instead of having hard coded slides
   const components = [
-    <DebugSlide {...debugSlideInfo}/>, 
-    <KennisDelingSlide {...kennisDelingInfo}/>
+    <DebugSlide {...debugSlideInfo}/>,
+    // <KennisDelingSlide {...kennisDelingInfo}/>
   ];
 
   useEffect(() => {

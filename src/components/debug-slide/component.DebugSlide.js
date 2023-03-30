@@ -7,9 +7,9 @@ import Video from '../video/component.Video'
 function DebugSlide({ScreenName,GroupName,CurrentSlide,VideoAtributes}) {
   return (
     <div class="debug-content">
-      <MainTitle titleText={"Waiting for slides..."} titleSize={'h1'}/>
       <Video {...VideoAtributes}/>
       <footer class="debug-information">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
         <TextBlock blockText={"Screen name: "+ ScreenName} titleSize={'h3'}/>
         <TextBlock blockText={"Group name: "+ GroupName} titleSize={'h3'}/>
         <TextBlock blockText={"Current slide: "+ CurrentSlide} titleSize={'h3'}/>
