@@ -1,0 +1,23 @@
+footer{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    text-align: center;
+    background-color: #13A0DA;
+    color: white;
+}
+body{
+    background: rgb(231,48,43);
+background: linear-gradient(360deg, rgba(231,48,43,1) 0%, rgba(0,161,226,1) 100%);
+background-repeat: no-repeat;
+height: 100%;
+}
+Video{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
