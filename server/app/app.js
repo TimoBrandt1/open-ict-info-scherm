@@ -2,8 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { Sequelize } = require('./utils/db');
-const kennisdelingController = require('./controllers/kennisdelingController');
-const userController = require('./controllers/userController');
+const kennisdelingRoutes = require('./routes/kennisdelingRoutes');
+const userRoutes = require('./routes/userRoutes');
 const config = require('./config');
 
 const app = express();
@@ -11,8 +11,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/kennisdeling', kennisdelingController);
-app.use('/user', userController);
+app.use('/kennisdeling', kennisdelingRoutes);
+app.use('/user', userRoutes);
 
 app.listen(config.port, () => {
     console.log(`Server running on port ${config.port}`);
