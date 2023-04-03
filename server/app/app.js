@@ -12,6 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/kennisdeling', kennisdelingController);
+app.use('/user', userController);
 
 app.listen(config.port, () => {
     console.log(`Server running on port ${config.port}`);
