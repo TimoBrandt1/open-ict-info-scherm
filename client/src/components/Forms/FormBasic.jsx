@@ -5,20 +5,35 @@ import { useState } from 'react'
 
 // go to ./FormTest.js to see how to use this component
 
-function FormBasic({initialValues, storageKeyPrefix}) {
+function FormBasic({initialValues, endpoint}) {
     const inputNames = Object.keys(initialValues);
     const [formValues, setFormValues] = useState(initialValues);
     const [formSubmitted, setFormSubmitted] = useState(false);
+    let hasImage = false;
+    // check if initial values have an image property
+    // if so, add a state for the image
+    if (initialValues.hasOwnProperty('image')) {
+        let hasImage = true;
+        const [file, setFile] = useState(null);
+    }
 
     const handleChange = (name, value) => {
         setFormValues({ ...formValues, [name]: value });
     };
 
+    const handleFileChange = (e) => {
+        setFile(e.target.files[0]);
+    }
+
     console.log(formValues);
 
     const saveData = () => { // save the data to local storage with the prefix
             // make post request to server
-            fetch('http://145.89.192.107/api/kennisdeling', {
+            if (hasImage) {
+                setFormValues({ ...formValues, image: file });
+            }
+
+            fetch('http://145.89.192.107/api' + endpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -63,6 +78,13 @@ function FormBasic({initialValues, storageKeyPrefix}) {
                                     placeholder={name}
                                     onChange={(e) => handleChange(name, e.target.value)}
                                 />
+                            {hasImage && name === 'image' && (
+                                <Form.Input
+                                    name={name}
+                                    type='file'
+                                    onChange={handleFileChange}
+                                />
+                            )}
                             </Form.Field>
                         ))}
 

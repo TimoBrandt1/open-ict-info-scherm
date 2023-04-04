@@ -3,16 +3,13 @@ import ScreenReplication from "../screen-replication/component.ScreenReplication
 
 const initialValues = {
     onderwerp: '',
-    spreker: '',
-    locatie: '',
-    tijd: '',
-    datum: '',
-    details: ''
+    details: '',
+    image: null
 };
 
-const endpoint = '/kennisdeling'
+const endpoint = '/showcaseprojecten'
 
-function FormKennisdeling() {
+function FormShowcaseProjecten() {
     return (
         <div>
             <FormBasic initialValues={initialValues} endpoint={endpoint} />
@@ -21,4 +18,4 @@ function FormKennisdeling() {
     );
 } 
 
-export default FormKennisdeling;
+export default FormShowcaseProjecten;
