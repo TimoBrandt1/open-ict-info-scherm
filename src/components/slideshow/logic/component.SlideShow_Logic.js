@@ -18,9 +18,9 @@ function Slideshow({SecondsBetweenSlides}) {
 
   };
   const debugSlideInfo = {
-    ScreenName: 'Screen 1',
-    GroupName: 'Group Debugslide',
-    CurrentSlide: 'Debugslide',
+    ScreenName: 'Debugslide',
+    GroupName: 'Wachten op groep',
+    CurrentSlide: 'Wachten op slides',
     VideoAtributes: videoProps
   };
   const kennisDelingInfo = {
@@ -37,7 +37,7 @@ function Slideshow({SecondsBetweenSlides}) {
   // Needs to be able to get Slide array in the future instead of having hard coded slides
   const components = [
     <DebugSlide {...debugSlideInfo}/>,
-    // <KennisDelingSlide {...kennisDelingInfo}/>
+    <KennisDelingSlide {...kennisDelingInfo}/>
   ];
 
   useEffect(() => {
