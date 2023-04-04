@@ -23,10 +23,10 @@ router.get('/:id', userController.getById);
 // Delete user by id
 // router.deleteById('/:id', verifyToken, userController.deleteById);
 // Create user
-router.create('/', userController.create);
+router.post('/', userController.create);
 // Update user by id
 // router.updateById('/:id', verifyToken, userController.updateById);
-router.login('/', userController.login);
+router.get('/', userController.login);
 // get user by token
 router.get('/', verifyToken, userController.getByToken);
 
