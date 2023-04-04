@@ -25,6 +25,6 @@ router.delete('/:id', verifyToken, kennisdelingController.deleteById);
 // Create kennisdeling
 router.post('/', verifyToken, kennisdelingController.create);
 // Update kennisdeling by id
-router.put('/:id', verifyToken, kennisdelingController.updateById);
+router.put('/:id', verifyToken, kennisdelingController.putById);
 
 module.exports = router;
