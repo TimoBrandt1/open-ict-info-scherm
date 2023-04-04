@@ -49,8 +49,8 @@ const showcaseProjectenController = {
     // create showcase projecten
     create: (req, res) => {
         connection.query(
-            'INSERT INTO `formShowcaseProjecten` (`projectnaam`, `projectomschrijving`, `projectlink`, `projectafbeelding`) VALUES (?, ?, ?, ?)',
-            [req.body.projectnaam, req.body.projectomschrijving, req.body.projectlink, req.body.projectafbeelding],
+            'INSERT INTO `formShowcaseProjecten` (`onderwerp`, `details`, `image`) VALUES (?, ?, ?)',
+            [req.body.onderwerp, req.body.details, req.body.image.buffer],
             (err, results) => {
                 if (err) {
                     console.log(err);
@@ -64,8 +64,8 @@ const showcaseProjectenController = {
     // update showcase projecten by id
     putById: (req, res) => {
         connection.query(
-            'UPDATE `formShowcaseProjecten` SET `projectnaam` = ?, `projectomschrijving` = ?, `projectlink` = ?, `projectafbeelding` = ? WHERE `id` = ?',
-            [req.body.projectnaam, req.body.projectomschrijving, req.body.projectlink, req.body.projectafbeelding, req.params.id],
+            'UPDATE `formShowcaseProjecten` SET `onderwerp` = ?, `details` = ?, `image` = ? WHERE `id` = ?',
+            [req.body.onderwerp, req.body.details, req.body.image.buffer, req.params.id],
             (err, results) => {
                 if (err) {
                     console.log(err);
