@@ -1,4 +1,4 @@
-.Screen{
+.Screen-Dashboard{
     text-align:         center;
     background-color:   #13a0da;
     color:              #f2f4f3;
@@ -33,8 +33,9 @@ wrapper {
 
 content {
     display: block;
+    float: left;
     right: 0px;
-   padding: 30px;
+//    padding: 30px;
     overflow: scroll;
-    height: 90%; //als padding uit staat, zet deze dan weer op 100%
+    height: 100%;
 }
