@@ -7,7 +7,7 @@ function Screens () {
 
     const [data, setData] = useState([]); // array of objects
     const getData = async () => {
-            const response = await fetch('http://145.89.192.107/api/formkennisdeling');
+            const response = await fetch('http://145.89.192.107/api/kennisdeling');
             const singleData = await response.json();
             setData(singleData);
     }
@@ -16,7 +16,7 @@ function Screens () {
     }, []);
 
     const deleteScreen = (id) => {
-        fetch('http://145.89.192.107/api/deleteScreen/'+id, {
+        fetch('http://145.89.192.107/api/kennisdeling/'+id, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
