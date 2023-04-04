@@ -3,7 +3,7 @@ import '../../App.scss'
 import './style.Dashboard.scss';
 import Navbar from "../../components/navbar/component.Navbar";
 import ScreenReplication from '../../components/screen-replication/component.ScreenReplication';
-import FormKennisdeling from '../../components/Forms/FormKennisdeling';
+import FormKennisdeling from '../../components/forms/FormKennisdeling';
 
 function Dashboard() {
     return (
