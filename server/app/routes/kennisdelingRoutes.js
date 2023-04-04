@@ -27,6 +27,6 @@ router.delete('/:id', kennisdelingController.deleteById);
 // Create kennisdeling
 router.post('/', kennisdelingController.create);
 // Update kennisdeling by id
-router.put('/:id', kennisdelingController.updateById);
+router.put('/:id', kennisdelingController.putById);
 
 module.exports = router;
