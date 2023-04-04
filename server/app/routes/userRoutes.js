@@ -17,9 +17,9 @@ router.use(bodyParser.json());
 router.use(cors());
 
 // Get all users
-router.getAll('/', userController.getAll);
+router.get('/', userController.getAll);
 // Get user by id
-router.getById('/:id', userController.getById);
+router.get('/:id', userController.getById);
 // Delete user by id
 // router.deleteById('/:id', verifyToken, userController.deleteById);
 // Create user
@@ -28,6 +28,6 @@ router.create('/', userController.create);
 // router.updateById('/:id', verifyToken, userController.updateById);
 router.login('/', userController.login);
 // get user by token
-router.getByToken('/', verifyToken, userController.getByToken);
+router.get('/', verifyToken, userController.getByToken);
 
 module.exports = router;

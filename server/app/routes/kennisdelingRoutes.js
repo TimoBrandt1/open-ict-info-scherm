@@ -19,12 +19,12 @@ router.use(cors());
 // Get all kennisdeling
 router.get('/', kennisdelingController.getAll);
 // Get kennisdeling by id
-router.getById('/:id', kennisdelingController.getById);
+router.get('/:id', kennisdelingController.getById);
 // Delete kennisdeling by id
-router.deleteById('/:id', verifyToken, kennisdelingController.deleteById);
+router.delete('/:id', verifyToken, kennisdelingController.deleteById);
 // Create kennisdeling
 router.post('/', verifyToken, kennisdelingController.create);
 // Update kennisdeling by id
-router.putById('/:id', verifyToken, kennisdelingController.updateById);
+router.put('/:id', verifyToken, kennisdelingController.updateById);
 
 module.exports = router;

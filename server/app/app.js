@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const { Sequelize } = require('./utils/db');
 const kennisdelingRoutes = require('./routes/kennisdelingRoutes');
 const userRoutes = require('./routes/userRoutes');
-const config = require('./config');
+const config = require('../config/index');
 
 const app = express();
 
