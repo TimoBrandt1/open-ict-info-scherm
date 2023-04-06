@@ -16,7 +16,7 @@ router.use(bodyParser.json());
 // Use cors
 router.use(cors());
 
-router.get('/', userController.getAll);
+router.get('/', showcaseProjectenController.getAll);
 // Get showcase projecten by id
 router.get('/:id', showcaseProjectenController.getById);
 
@@ -27,3 +27,5 @@ router.delete('/:id', showcaseProjectenController.deleteById);
 router.post('/', showcaseProjectenController.create);
 // Update showcase projecten by id
 router.put('/:id', showcaseProjectenController.putById);
+
+module.exports = router;
