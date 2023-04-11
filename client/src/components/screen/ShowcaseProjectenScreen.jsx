@@ -7,7 +7,7 @@ import ImageDisplay from "./ImageDisplay";
 function ShowcaseProjectenScreen() {
     const [data, setData] = useState({});
     const getData = async () => {
-        const response = await fetch('http://145.89.192.107/api/showcaseprojecten/17');
+        const response = await fetch('http://145.89.192.107/api/showcaseprojecten/19');
         const singleData = await response.json();
         setData(singleData[0]);
         console.log(singleData[0]);
