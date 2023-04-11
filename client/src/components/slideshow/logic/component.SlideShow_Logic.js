@@ -6,6 +6,16 @@ import KennisDelingSlide from "../../kennisdeling-slide/component.KennisdelingSl
 
 function Slideshow({SecondsBetweenSlides}) {
   // Slides information, should later be moved to other file.
+  const [data, setData] = useState({});
+  const getData = async (id) => {
+    const response = await fetch('http://145.89.192.107/api/kennisdeling/${id}');
+    const singleData = await response.json();
+    setData(singleData[0]);
+  }
+
+  getData(13);
+  getData(17);
+
   const videoProps = {
     vSrc: { src: "videos/DebugSlideVideo.mp4" },
     vType: { type: "video/mp4" },
@@ -22,11 +32,20 @@ function Slideshow({SecondsBetweenSlides}) {
     VideoAtributes: videoProps
   };
   const kennisDelingInfo = {
-    Subject: 'AI',
-    Speaker: 'Voornaam Achternaam',
-    Time: '12:00',
-    Location: 'Lokaal K0.94',
-    Details: 'Alot of info that you might need to understand the subject.'
+    Subject: data["onderwerp"],
+    Speaker: data["spreker"],
+    Location: data["locatie"],
+    Time: data["tijd"],
+    Datum: data["datum"],
+    Details: data["details"]
+  };
+  const kennisDelingInfoDupe = {
+    Subject: data["onderwerp"],
+    Speaker: data["spreker"],
+    Location: data["locatie"],
+    Time: data["tijd"],
+    Datum: data["datum"],
+    Details: data["details"]
   };
 
   // Slide Show Logic all code under this comment
@@ -35,15 +54,32 @@ function Slideshow({SecondsBetweenSlides}) {
   // Needs to be able to get Slide array in the future instead of having hard coded slides
   const components = [
     <DebugSlide {...debugSlideInfo}/>, 
-    <KennisDelingSlide {...kennisDelingInfo}/>
+    <KennisDelingSlide {...kennisDelingInfo}/>,
+    <KennisDelingSlide {...kennisDelingInfoDupe}/>
   ];
 
   useEffect(() => {
+    
+    console.log(data["onderwerp"])
+
     const timeoutId = setTimeout(() => {
       setCurrentIndex((currentIndex + 1) % components.length);
     }, SecondsBetweenSlides*1000);
 
-    return () => clearTimeout(timeoutId);
+    const handleKeyDown = (event) => {
+      if (event.keyCode === 37) { // Left arrow key
+        setCurrentIndex((currentIndex - 1 + components.length) % components.length);
+      } else if (event.keyCode === 39) { // Right arrow key
+        setCurrentIndex((currentIndex + 1) % components.length);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, [currentIndex, components]);
 
   return (
@@ -53,4 +89,4 @@ function Slideshow({SecondsBetweenSlides}) {
   );
 }
 
-  export default Slideshow;
+export default Slideshow;
