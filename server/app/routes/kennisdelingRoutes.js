@@ -20,11 +20,14 @@ router.use(cors());
 router.get('/', kennisdelingController.getAll);
 // Get kennisdeling by id
 router.get('/:id', kennisdelingController.getById);
+
+// Routes under here need authentication in the future
+
 // Delete kennisdeling by id
-router.delete('/:id', verifyToken, kennisdelingController.deleteById);
+router.delete('/:id', kennisdelingController.deleteById);
 // Create kennisdeling
-router.post('/', verifyToken, kennisdelingController.create);
+router.post('/', kennisdelingController.create);
 // Update kennisdeling by id
-router.put('/:id', verifyToken, kennisdelingController.putById);
+router.put('/:id', kennisdelingController.putById);
 
 module.exports = router;
