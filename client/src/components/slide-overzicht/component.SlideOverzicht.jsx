@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.SlideOverzicht.scss';
 import { useState, useEffect } from 'react'
+import FormEdit from '../form-edit/component.FormEdit';
 
 
 
@@ -79,6 +80,8 @@ function SlideOverzicht() {
 
 
   return (
+  
+    
     <div className="slideOverzicht">
       
       <container>  
@@ -95,10 +98,13 @@ function SlideOverzicht() {
       <div id='overzicht'>
         {Array.from(Array(slidesOrder.length).keys()).map((id) => (
                 <scr>
+                  <button onClick={FormEdit(slidesOrder[id])}>
                   <div className='scherm'/>
-                  
+
                     <br/>{(slidesOrder[id].spreker)}
                     <br/>{(slidesOrder[id].datum)}
+                  </button>
+
                 
                 </scr>
             ))}
