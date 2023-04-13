@@ -60,7 +60,7 @@ function Navbar() {
         </li>
         {/* Slides Navigation DOM*/}
         <li>
-          <Link to="/">Slide Beheer</Link>
+          <Link to="/SlideOverzicht">Slide Beheer</Link>
           <ul>
             <li>
               <Link to="/chooseform">Slide toevoegen</Link>
