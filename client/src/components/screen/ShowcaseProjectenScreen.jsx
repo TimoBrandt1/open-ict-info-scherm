@@ -1,4 +1,4 @@
-import FormShowcaseProjecten from "../Forms/FormShowcaseProjecten";
+import FormShowcaseProjecten from "../forms/FormShowcaseProjecten";
 import BasicScreen from "./BasicScreen";
 import {useState, useEffect} from 'react';
 import ImageDisplay from "./ImageDisplay";
