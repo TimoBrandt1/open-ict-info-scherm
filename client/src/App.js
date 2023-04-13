@@ -1,37 +1,39 @@
-// import logo from './logo.svg';
-import './App.scss';
+import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "./styles/theme";
+import { GlobalStyle } from "./styles/globalStyle";
+import { Helmet } from "react-helmet";
+import Layout from "./components/Layout/Layout";
+import RoutesLink from "./RoutesLink";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/layout/Layout";
-import Dashboard from './pages/dashboard/Dashboard';
-import Screen from './pages/screen/Screen';
-import KennisdelingScreen from './components/screen/KennisdelingScreen';
-import Screens from "./pages/screen/Screens";
-import SlideOverzicht from "./components/slide-overzicht/component.SlideOverzicht"
+export const ThemeContext = React.createContext(null);
 
-function App() {
+const App = () => {
+  const [theme, setTheme] = useState("light");
+  const themeStyle = theme === "light" ? lightTheme : darkTheme;
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />} >
-          <Route index element={<Dashboard />} />
-        </Route>
-        <Route path="screen" element={<Layout />} >
-          <Route index element={<Screen />} />
-        </Route>
-        <Route path="formscreen" element={<Layout />} >
-          <Route index element={<KennisdelingScreen />} />
-        </Route>
-        <Route path="*" element={<h1>404: Not Found</h1>} />
-        <Route path="screens" element={<Layout />} >
-          <Route index element={<Screens />} />
-        </Route>
-        <Route path="SlideOverzicht" element={<Layout />} >
-          <Route index element={<SlideOverzicht />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ThemeContext.Provider value={{ setTheme, theme }}>
+      <ThemeProvider theme={themeStyle}>
+        <GlobalStyle />
+        <Helmet>
+          <title>Open-ICT Scherm</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+          />
+        </Helmet>
+        <>
+          <Layout>
+            <RoutesLink />
+          </Layout>
+        </>
+      </ThemeProvider>
+      ;
+    </ThemeContext.Provider>
   );
-}
+};
 
 export default App;
