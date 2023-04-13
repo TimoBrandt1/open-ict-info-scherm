@@ -63,7 +63,7 @@ function Navbar() {
           <Link to="/">Slide Beheer</Link>
           <ul>
             <li>
-              <Link to="/">Slide toevoegen</Link>
+              <Link to="/chooseform">Slide toevoegen</Link>
             </li>
           </ul>
         </li>
