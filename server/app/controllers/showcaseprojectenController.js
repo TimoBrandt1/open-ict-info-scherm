@@ -1,4 +1,5 @@
 const connection = require('../utils/db');
+const { Buffer } = require('buffer');
 
 // controller voor showcase projecten formulieren
 const showcaseProjectenController = {
@@ -50,7 +51,7 @@ const showcaseProjectenController = {
     create: (req, res) => {
         connection.query(
             'INSERT INTO `formShowcaseProjecten` (`onderwerp`, `details`, `image`) VALUES (?, ?, ?)',
-            [req.body.onderwerp, req.body.details, req.body.image],
+            [req.body.onderwerp, req.body.details, Buffer.from(req.body.image.buffer, 'base64')],
             (err, results) => {
                 if (err) {
                     console.log(err);
@@ -65,7 +66,7 @@ const showcaseProjectenController = {
     putById: (req, res) => {
         connection.query(
             'UPDATE `formShowcaseProjecten` SET `onderwerp` = ?, `details` = ?, `image` = ? WHERE `id` = ?',
-            [req.body.onderwerp, req.body.details, req.body.image, req.params.id],
+            [req.body.onderwerp, req.body.details, Buffer.from(req.body.image.buffer, 'base64'), req.params.id],
             (err, results) => {
                 if (err) {
                     console.log(err);

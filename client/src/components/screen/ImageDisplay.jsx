@@ -17,8 +17,8 @@ function ImageDisplay({ buffer }) {
 
   useEffect (() => {
     const base64Flag = 'data:image/jpeg;base64,';
-    const imageStr = arrayBufferToBase64(buffer);
-    setImageUrl(base64Flag + imageStr);
+    const imageData = new Uint8Array(buffer);
+    setImageUrl(base64Flag + "${btoa(String.fromCharCode(...new Uint8Array(imageData)))}");
   }, [buffer]);
 
   return (
