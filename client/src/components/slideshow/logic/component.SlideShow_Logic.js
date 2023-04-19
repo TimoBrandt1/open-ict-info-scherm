@@ -47,28 +47,45 @@ function Slideshow({SecondsBetweenSlides}) {
     VideoAtributes: videoProps
   };
   
-  const kennisDelingInfo = {
-    Subject: data1.onderwerp || "",
-    Speaker: data1.spreker || "",
-    Location: data1.locatie || "",
-    Time: data1.tijd || "",
-    Datum: data1.datum || "",
-    Details: data1.details || ""
-  };
-
-  const kennisDelingInfoDupe = {
-    Subject: data2.onderwerp || "",
-    Speaker: data2.spreker || "",
-    Location: data2.locatie || "",
-    Time: data2.tijd || "",
-    Datum: data2.datum || "",
-    Details: data2.details || ""
-  };
+  const slideData = [
+    {
+      Subject: data1.onderwerp || "",
+      Speaker: data1.spreker || "",
+      Location: data1.locatie || "",
+      Time: data1.tijd || "",
+      Datum: data1.datum || "",
+      Details: data1.details || ""
+    },
+    {
+      Subject: data2.onderwerp || "",
+      Speaker: data2.spreker || "",
+      Location: data2.locatie || "",
+      Time: data2.tijd || "",
+      Datum: data2.datum || "",
+      Details: data2.details || ""
+    },
+    {
+      Subject: data1.onderwerp || "",
+      Speaker: data1.spreker || "",
+      Location: data1.locatie || "",
+      Time: data1.tijd || "",
+      Datum: data1.datum || "",
+      Details: data1.details || ""
+    },
+    {
+      Subject: data2.onderwerp || "",
+      Speaker: data2.spreker || "",
+      Location: data2.locatie || "",
+      Time: data2.tijd || "",
+      Datum: data2.datum || "",
+      Details: data2.details || ""
+    }
+  ];
   
   const slides = [
     <DebugSlide {...debugSlideInfo} />,
-    <KennisDelingSlide {...kennisDelingInfo} />,
-    <KennisDelingSlide {...kennisDelingInfoDupe} />
+    <KennisDelingSlide slideData={slideData} />,
+    // <KennisDelingSlide {...kennisDelingInfoDupe} />
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
