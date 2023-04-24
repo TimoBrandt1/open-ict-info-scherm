@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './style.SlideShow_Logic.scss';
 import DebugSlide from '../../debug-slide/component.DebugSlide';
 import KennisDelingSlide from "../../kennisdeling-slide/component.KennisdelingSlide";
+import getSlides from '../fetchData/FetchData';
 
 function Slideshow({SecondsBetweenSlides}) {
   // Slides information, should later be moved to other file.
@@ -82,14 +83,19 @@ function Slideshow({SecondsBetweenSlides}) {
     }
   ];
   
+  // Array of slides
   const slides = [
     <DebugSlide {...debugSlideInfo} />,
     <KennisDelingSlide slideData={slideData} />,
     // <KennisDelingSlide {...kennisDelingInfoDupe} />
   ];
   
+  // Index of the currently displayed slide
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
+
+  // Automatically switch to the next slide after a specified number of seconds,
+  // and allow manual navigation using arrow keys
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       getData(13, setData1);
