@@ -1,11 +1,12 @@
 .screenReplication-wrap {
     position: block;
     overflow: hidden;
+    height: 100%;
   }
   
   .wrapped-iframe {
     position: block;
     width: 100%;
-    height: 750px;
+    height: 100%;
     border: 1;
   }
