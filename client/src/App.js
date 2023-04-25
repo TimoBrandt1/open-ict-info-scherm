@@ -2,11 +2,11 @@
 import './App.scss';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GroepEdit from "./components/groep-edit/component.GroepEdit"
 import Layout from "./pages/layout/Layout";
 import Dashboard from './pages/dashboard/Dashboard';
 import Screen from './pages/screen/Screen';
 import KennisdelingScreen from './components/screen/KennisdelingScreen';
-import Screens from "./pages/screen/Screens";
 import SlideOverzicht from "./components/slide-overzicht/component.SlideOverzicht"
 import GroepOverzicht from "./components/groep-overzicht/component.GroepOverzicht"
 
@@ -20,8 +20,14 @@ function App() {
         <Route path="screen" element={<Layout />} >
           <Route index element={<Screen />} />
         </Route>
-        <Route path="formscreen" element={<Layout />} >
+        <Route path="kennisdelingscreen" element={<Layout />} >
           <Route index element={<KennisdelingScreen />} />
+        </Route>
+        <Route path="formshowcaseprojecten" element={<Layout />} >
+          <Route index element={<FormShowcaseProjecten />} />
+        </Route>
+        <Route path="kennisdelingform" element={<Layout />} >
+          <Route index element={<FormKennisdeling />} />
         </Route>
         <Route path="*" element={<h1>404: Not Found</h1>} />
         <Route path="screens" element={<Layout />} >
@@ -32,6 +38,15 @@ function App() {
         </Route>
         <Route path="GroepOverzicht" element={<Layout />} >
           <Route index element={<GroepOverzicht />} />
+        </Route>        
+        <Route path="GroepEdit" element={<Layout />} >
+          <Route index element={<GroepEdit />} />
+        </Route>
+        <Route path="showcaseprojectenscreen" element={<Layout />} >
+          <Route index element={<ShowcaseProjectenScreen />} />
+        </Route>
+        <Route path="chooseform" element={<Layout />} >
+          <Route index element={<ChooseForm />} />
         </Route>
       </Routes>
     </BrowserRouter>

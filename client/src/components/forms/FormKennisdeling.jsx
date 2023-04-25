@@ -10,12 +10,12 @@ const initialValues = {
     details: ''
 };
 
-const storageKeyPrefix = 'FormKennisdeling';
+const endpoint = '/kennisdeling'
 
 function FormKennisdeling() {
     return (
         <div>
-            <FormBasic initialValues={initialValues} storageKeyPrefix={storageKeyPrefix} />
+            <FormBasic initialValues={initialValues} endpoint={endpoint} />
             <ScreenReplication src="/formscreen" />
         </div>
     );

@@ -2,6 +2,7 @@ import React from 'react';
 import './style.GroepOverzicht.scss';
 import { useState, useEffect } from 'react'
 
+import {TempData} from '../TempData.js';
 
 
 
@@ -10,25 +11,34 @@ import { useState, useEffect } from 'react'
 
 
 function GroepOverzicht() {
-  //fetches array 'groups'
-  const [groups, setData] = useState([]); //array of objects
-  const getData = async () => {
-          const response = await fetch('http://145.89.192.107/api/kennisdeling');
-          const singleData = await response.json();
-          setData(singleData);
-          setGroups(singleData)
-  }
+  // //fetches array 'groups'
+  // const [groups, setData] = useState([]); //array of objects
+  // const getData = async () => {
+  //         const response = await fetch('http://145.89.192.107/api/kennisdeling');
+  //         const singleData = await response.json();
+  //         setData(singleData);
+  //         setGroups(singleData)
+  // }
   
+  // const [groupsOrder, setGroups] = useState(groups)
+
+  // useEffect(() => {
+  //   getData();
+  //   setGroups(groups);
+  //fetches array 'groups'
+  const [groups, setData] = useState([TempData]); // array of objects
+
+
   const [groupsOrder, setGroups] = useState(groups)
 
   useEffect(() => {
-    getData();
-    setGroups(groups);
+    setData(TempData);
+    setGroups(TempData);
   }, []);
 
 
   function addSort(filter) {
-    document.getElementById("enter").value = filter
+    document.getElementById("sorteren").value = filter
   }
 
 
@@ -38,10 +48,10 @@ function GroepOverzicht() {
    
     if (filter.includes("A")){
       groupsOrder.sort(function (a, b) {
-         if (a.spreker < b.spreker) {
+          if (a.titel < b.titel) {
             return -1;
           }
-         if (a.spreker > b.spreker) {
+          if (a.titel > b.titel) {
             return 1;
           }
           return 0;
@@ -80,25 +90,28 @@ function GroepOverzicht() {
 
 
   return (
-    <div className="GroepOverzicht">
+    <div className="groepOverzicht">
       
       <container>  
       <div className='filters'>
-        <select name="Sorteren" id="Sorteren" onChange={(event) => addSort(event.target.value)& sort(event.target.value)}>
+        <select class="input" name="sorteren" id="sorteren" onChange={(event) => addSort(event.target.value)& sort(event.target.value)}>
           <option value="A+">Alfabetisch (A-Z)</option>
           <option value="A-">Alfabetisch (Z-A)</option>
           <option value="D+">Datum (vroegst eerst)</option>
           <option value="D-">Datum (laatst eerst)</option>
         </select>
-        <input id="searchInput" type="text" placeholder="Search" onChange={(event) => sort(event.target.value)}/>
-        <button id="enter" value="D+" onClick={(event) => sort(event.target.value)}>filter</button>
+        <input class="input" id="searchInput" type="text" placeholder="Search" onChange={(event) => sort(event.target.value)}/>
       </div>
       <div id='overzicht'>
         {Array.from(Array(groupsOrder.length).keys()).map((id) => (
                 <scr>
-                  <div className='scherm'/>
+                  <div className='scherm'>
+                  <a href={ '/GroepEdit?GroepId=' + groupsOrder[id].id }><div class='optie' >E</div></a>
+                    <div class='optie'>i</div>
+                    <div class='optie'>D</div>
+                  </div>
                   
-                    <br/>{(groupsOrder[id].spreker)}
+                    <br/>{(groupsOrder[id].titel)}
                     <br/>{(groupsOrder[id].datum)}
                 
                 </scr>

@@ -28,7 +28,7 @@ function SlideOverzicht() {
 
 
   function addSort(filter) {
-    document.getElementById("enter").value = filter
+    document.getElementById("sorteren").value = filter
   }
 
 
@@ -86,26 +86,26 @@ function SlideOverzicht() {
       
       <container>  
       <div className='filters'>
-        <select name="Sorteren" id="Sorteren" onChange={(event) => addSort(event.target.value)& sort(event.target.value)}>
+        <select class="input" name="sorteren" id="sorteren" onChange={(event) => addSort(event.target.value)& sort(event.target.value)}>
           <option value="A+">Alfabetisch (A-Z)</option>
           <option value="A-">Alfabetisch (Z-A)</option>
           <option value="D+">Datum (vroegst eerst)</option>
           <option value="D-">Datum (laatst eerst)</option>
         </select>
-        <input id="searchInput" type="text" placeholder="Search" onChange={(event) => sort(event.target.value)}/>
-        <button id="enter" value="D+" onClick={(event) => sort(event.target.value)}>filter</button>
+        <input class="input" id="searchInput" type="text" placeholder="Search" onChange={(event) => sort(event.target.value)}/>
       </div>
       <div id='overzicht'>
         {Array.from(Array(slidesOrder.length).keys()).map((id) => (
                 <scr>
-                  <button onClick={FormEdit(slidesOrder[id])}>
-                  <div className='scherm'/>
-
+                  <div className='scherm'>
+                    <div class='optie'>E</div>
+                    <div class='optie'>i</div>
+                    <div class='optie'>D</div>
+                  </div>
+                  
                     <br/>{(slidesOrder[id].spreker)}
                     <br/>{(slidesOrder[id].datum)}
-                  </button>
-
-                
+                    
                 </scr>
             ))}
       </div>

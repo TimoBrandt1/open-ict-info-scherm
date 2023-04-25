@@ -51,7 +51,7 @@ function Navbar() {
         </li>
         {/* Group Navigation DOM*/}
         <li>
-          <Link to="/">Groep Beheer</Link>
+          <Link to="/GroepOverzicht">Groep Beheer</Link>
           <ul>
             <li>
               <Link to="/">Groep toevoegen</Link>
@@ -60,10 +60,10 @@ function Navbar() {
         </li>
         {/* Slides Navigation DOM*/}
         <li>
-          <Link to="/">Slide Beheer</Link>
+          <Link to="/SlideOverzicht">Slide Beheer</Link>
           <ul>
             <li>
-              <Link to="/">Slide toevoegen</Link>
+              <Link to="/chooseform">Slide toevoegen</Link>
             </li>
           </ul>
         </li>
