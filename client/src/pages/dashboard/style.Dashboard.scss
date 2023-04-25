@@ -1,0 +1,42 @@
+//header specs
+.Screen{
+    text-align:         center;
+    background-color:   #13a0da;
+    color:              #f2f4f3;
+    margin-top:         0px;
+    padding-top:        22px;
+    padding-bottom:     22px;
+    font-size:          34px;
+    height:             46px;
+    
+    position:           sticky;
+    top:                0px;
+    z-index:            5;
+    @media (max-width: 480px){
+        font-size: 25px;
+    }
+}
+
+h1 {
+    margin-bottom: 0px;
+}
+
+//positie tov header (dus alles onder header)
+wrapper {
+    
+    position:           fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 90px;
+
+}
+
+
+content {
+    display: block;
+    right: 0px;
+   padding: 30px;
+    overflow: scroll;
+    height: 92.5%; //als padding uit staat, zet deze dan weer op 100%
+}
