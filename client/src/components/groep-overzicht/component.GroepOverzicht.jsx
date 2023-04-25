@@ -8,21 +8,22 @@ import { useState, useEffect } from 'react'
 
 
 
+
 function GroepOverzicht() {
-  //fetches array 'slides'
-  const [groups, setData] = useState([]); // array of objects
+  //fetches array 'groups'
+  const [groups, setData] = useState([]); //array of objects
   const getData = async () => {
-         // const response = await fetch('http://145.89.192.107/api/kennisdeling');
+          const response = await fetch('http://145.89.192.107/api/kennisdeling');
           const singleData = await response.json();
           setData(singleData);
           setGroups(singleData)
   }
   
-  const [GroupOrder, setGroep] = useState(slides)
+  const [groupsOrder, setGroups] = useState(groups)
 
   useEffect(() => {
     getData();
-    setSlides(slides);
+    setGroups(groups);
   }, []);
 
 
@@ -33,21 +34,21 @@ function GroepOverzicht() {
 
   function sort(filter) {
 
-    let slidesOrder = slides;
+    let groupsOrder = groups;
    
     if (filter.includes("A")){
-        slidesOrder.sort(function (a, b) {
-          if (a.spreker < b.spreker) {
+      groupsOrder.sort(function (a, b) {
+         if (a.spreker < b.spreker) {
             return -1;
           }
-          if (a.spreker > b.spreker) {
+         if (a.spreker > b.spreker) {
             return 1;
           }
           return 0;
         });
     } 
     if (filter.includes("D")){
-      slidesOrder.sort(function (a, b) {
+      groupsOrder.sort(function (a, b) {
         if (a.datum < b.datum) {
           return -1;
         }
@@ -58,7 +59,7 @@ function GroepOverzicht() {
       });
     } 
   if (filter.includes("-")){
-    slidesOrder = slidesOrder.reverse();
+    groupsOrder = groupsOrder.reverse();
   }
 
   const searchInput = document.getElementById("searchInput").value.toLowerCase();
@@ -68,18 +69,18 @@ function GroepOverzicht() {
   console.log(filteredArray)
   console.log("^^^")
   
-  Array.from(Array(slidesOrder.length).keys()).map((id) => {
-    if (slidesOrder[id].spreker.toLowerCase().includes(searchInput)) {
-      filteredArray.push (slidesOrder[id])
+  Array.from(Array(groupsOrder.length).keys()).map((id) => {
+    if (groupsOrder[id].spreker.toLowerCase().includes(searchInput)) {
+      filteredArray.push (groupsOrder[id])
     }
   })
 
-  setSlides(filteredArray)
+  setGroups(filteredArray)
   };
 
 
   return (
-    <div className="slideOverzicht">
+    <div className="GroepOverzicht">
       
       <container>  
       <div className='filters'>
@@ -93,12 +94,12 @@ function GroepOverzicht() {
         <button id="enter" value="D+" onClick={(event) => sort(event.target.value)}>filter</button>
       </div>
       <div id='overzicht'>
-        {Array.from(Array(slidesOrder.length).keys()).map((id) => (
+        {Array.from(Array(groupsOrder.length).keys()).map((id) => (
                 <scr>
                   <div className='scherm'/>
                   
-                    <br/>{(slidesOrder[id].spreker)}
-                    <br/>{(slidesOrder[id].datum)}
+                    <br/>{(groupsOrder[id].spreker)}
+                    <br/>{(groupsOrder[id].datum)}
                 
                 </scr>
             ))}
@@ -109,4 +110,4 @@ function GroepOverzicht() {
   );
 }
 
-export default SlideOverzicht;
+export default GroepOverzicht;

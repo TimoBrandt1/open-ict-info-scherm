@@ -8,6 +8,7 @@ import Screen from './pages/screen/Screen';
 import KennisdelingScreen from './components/screen/KennisdelingScreen';
 import Screens from "./pages/screen/Screens";
 import SlideOverzicht from "./components/slide-overzicht/component.SlideOverzicht"
+import GroepOverzicht from "./components/groep-overzicht/component.GroepOverzicht"
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path="SlideOverzicht" element={<Layout />} >
           <Route index element={<SlideOverzicht />} />
+        </Route>
+        <Route path="GroepOverzicht" element={<Layout />} >
+          <Route index element={<GroepOverzicht />} />
         </Route>
       </Routes>
     </BrowserRouter>
