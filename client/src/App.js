@@ -2,13 +2,18 @@
 import './App.scss';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import GroepEdit from "./components/groep-edit/component.GroepEdit"
 import Layout from "./pages/layout/Layout";
 import Dashboard from './pages/dashboard/Dashboard';
 import Screen from './pages/screen/Screen';
 import KennisdelingScreen from './components/screen/KennisdelingScreen';
 import SlideOverzicht from "./components/slide-overzicht/component.SlideOverzicht"
 import GroepOverzicht from "./components/groep-overzicht/component.GroepOverzicht"
+import GroepEdit from "./components/groep-edit/component.GroepEdit"
+import Screens from "./pages/screen/Screens"
+import FormKennisdeling from './components/forms/FormKennisdeling';
+import FormShowcaseProjecten from './components/forms/FormShowcaseProjecten';
+import ShowcaseProjectenScreen from './components/screen/ShowcaseProjectenScreen'
+import ChooseForm from './components/forms/ChooseForm';
 
 function App() {
   return (
