@@ -1,7 +1,8 @@
 import React from 'react';
-import './style.SlideOverzicht.scss';
+import './style.GroepOverzicht.scss';
 import { useState, useEffect } from 'react'
-import FormEdit from '../form-edit/component.FormEdit';
+
+import {TempData} from '../TempData.js';
 
 
 
@@ -9,21 +10,30 @@ import FormEdit from '../form-edit/component.FormEdit';
 
 
 
-function SlideOverzicht() {
-  //fetches array 'slides'
-  const [slides, setData] = useState([]); // array of objects
-  const getData = async () => {
-          const response = await fetch('http://145.89.192.107/api/kennisdeling');
-          const singleData = await response.json();
-          setData(singleData);
-          setSlides(singleData)
-  }
+function GroepOverzicht() {
+  // //fetches array 'groups'
+  // const [groups, setData] = useState([]); //array of objects
+  // const getData = async () => {
+  //         const response = await fetch('http://145.89.192.107/api/kennisdeling');
+  //         const singleData = await response.json();
+  //         setData(singleData);
+  //         setGroups(singleData)
+  // }
   
-  const [slidesOrder, setSlides] = useState(slides)
+  // const [groupsOrder, setGroups] = useState(groups)
+
+  // useEffect(() => {
+  //   getData();
+  //   setGroups(groups);
+  //fetches array 'groups'
+  const [groups, setData] = useState([TempData]); // array of objects
+
+
+  const [groupsOrder, setGroups] = useState(groups)
 
   useEffect(() => {
-    getData();
-    setSlides(slides);
+    setData(TempData);
+    setGroups(TempData);
   }, []);
 
 
@@ -34,21 +44,21 @@ function SlideOverzicht() {
 
   function sort(filter) {
 
-    let slidesOrder = slides;
+    let groupsOrder = groups;
    
     if (filter.includes("A")){
-        slidesOrder.sort(function (a, b) {
-          if (a.spreker < b.spreker) {
+      groupsOrder.sort(function (a, b) {
+          if (a.titel < b.titel) {
             return -1;
           }
-          if (a.spreker > b.spreker) {
+          if (a.titel > b.titel) {
             return 1;
           }
           return 0;
         });
     } 
     if (filter.includes("D")){
-      slidesOrder.sort(function (a, b) {
+      groupsOrder.sort(function (a, b) {
         if (a.datum < b.datum) {
           return -1;
         }
@@ -59,7 +69,7 @@ function SlideOverzicht() {
       });
     } 
   if (filter.includes("-")){
-    slidesOrder = slidesOrder.reverse();
+    groupsOrder = groupsOrder.reverse();
   }
 
   const searchInput = document.getElementById("searchInput").value.toLowerCase();
@@ -69,20 +79,18 @@ function SlideOverzicht() {
   console.log(filteredArray)
   console.log("^^^")
   
-  Array.from(Array(slidesOrder.length).keys()).map((id) => {
-    if (slidesOrder[id].spreker.toLowerCase().includes(searchInput)) {
-      filteredArray.push (slidesOrder[id])
+  Array.from(Array(groupsOrder.length).keys()).map((id) => {
+    if (groupsOrder[id].spreker.toLowerCase().includes(searchInput)) {
+      filteredArray.push (groupsOrder[id])
     }
   })
 
-  setSlides(filteredArray)
+  setGroups(filteredArray)
   };
 
 
   return (
-  
-    
-    <div className="slideOverzicht">
+    <div className="groepOverzicht">
       
       <container>  
       <div className='filters'>
@@ -95,17 +103,17 @@ function SlideOverzicht() {
         <input class="input" id="searchInput" type="text" placeholder="Search" onChange={(event) => sort(event.target.value)}/>
       </div>
       <div id='overzicht'>
-        {Array.from(Array(slidesOrder.length).keys()).map((id) => (
+        {Array.from(Array(groupsOrder.length).keys()).map((id) => (
                 <scr>
                   <div className='scherm'>
-                    <div class='optie'>E</div>
+                  <a href={ '/GroepEdit?GroepId=' + groupsOrder[id].id }><div class='optie' >E</div></a>
                     <div class='optie'>i</div>
                     <div class='optie'>D</div>
                   </div>
                   
-                    <br/>{(slidesOrder[id].spreker)}
-                    <br/>{(slidesOrder[id].datum)}
-                    
+                    <br/>{(groupsOrder[id].titel)}
+                    <br/>{(groupsOrder[id].datum)}
+                
                 </scr>
             ))}
       </div>
@@ -115,4 +123,4 @@ function SlideOverzicht() {
   );
 }
 
-export default SlideOverzicht;
+export default GroepOverzicht;

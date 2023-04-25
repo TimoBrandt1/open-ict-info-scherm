@@ -51,7 +51,7 @@ function Navbar() {
         </li>
         {/* Group Navigation DOM*/}
         <li>
-          <Link to="/">Groep Beheer</Link>
+          <Link to="/GroepOverzicht">Groep Beheer</Link>
           <ul>
             <li>
               <Link to="/">Groep toevoegen</Link>
