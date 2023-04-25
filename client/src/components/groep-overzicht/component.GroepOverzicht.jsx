@@ -1,28 +1,25 @@
 import React from 'react';
-import './style.SlideOverzicht.scss';
+import './style.GroepOverzicht.scss';
 import { useState, useEffect } from 'react'
 
+import {TempData} from '../TempData.js';
 
 
 
 
 
 
-function SlideOverzicht() {
+
+function GroepOverzicht() {
   //fetches array 'slides'
-  const [slides, setData] = useState([]); // array of objects
-  const getData = async () => {
-          const response = await fetch('http://145.89.192.107/api/kennisdeling');
-          const singleData = await response.json();
-          setData(singleData);
-          setSlides(singleData)
-  }
-  
+  const [slides, setData] = useState([TempData]); // array of objects
+
+
   const [slidesOrder, setSlides] = useState(slides)
 
   useEffect(() => {
-    getData();
-    setSlides(slides);
+    setData(TempData);
+    setSlides(TempData);
   }, []);
 
 
@@ -37,10 +34,10 @@ function SlideOverzicht() {
    
     if (filter.includes("A")){
         slidesOrder.sort(function (a, b) {
-          if (a.spreker < b.spreker) {
+          if (a.titel < b.titel) {
             return -1;
           }
-          if (a.spreker > b.spreker) {
+          if (a.titel > b.titel) {
             return 1;
           }
           return 0;
@@ -69,7 +66,7 @@ function SlideOverzicht() {
   console.log("^^^")
   
   Array.from(Array(slidesOrder.length).keys()).map((id) => {
-    if (slidesOrder[id].spreker.toLowerCase().includes(searchInput)) {
+    if (slidesOrder[id].titel.toLowerCase().includes(searchInput)) {
       filteredArray.push (slidesOrder[id])
     }
   })
@@ -79,7 +76,7 @@ function SlideOverzicht() {
 
 
   return (
-    <div className="slideOverzicht">
+    <div className="groepOverzicht">
       
       <container>  
       <div className='filters'>
@@ -95,12 +92,12 @@ function SlideOverzicht() {
         {Array.from(Array(slidesOrder.length).keys()).map((id) => (
                 <scr>
                   <div className='scherm'>
-                    <div class='optie'>E</div>
+                  <a href={ '/GroepEdit?GroepId=' + slidesOrder[id].id }><div class='optie' >E</div></a>
                     <div class='optie'>i</div>
                     <div class='optie'>D</div>
                   </div>
                   
-                    <br/>{(slidesOrder[id].spreker)}
+                    <br/>{(slidesOrder[id].titel)}
                     <br/>{(slidesOrder[id].datum)}
                 
                 </scr>
@@ -112,4 +109,4 @@ function SlideOverzicht() {
   );
 }
 
-export default SlideOverzicht;
+export default GroepOverzicht;

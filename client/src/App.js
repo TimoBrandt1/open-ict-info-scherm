@@ -7,6 +7,8 @@ import Dashboard from './pages/dashboard/Dashboard';
 import Screen from './pages/screen/Screen';
 import KennisdelingScreen from './components/screen/KennisdelingScreen';
 import SlideOverzicht from "./components/slide-overzicht/component.SlideOverzicht"
+import GroepOverzicht from "./components/groep-overzicht/component.GroepOverzicht"
+import GroepEdit from "./components/groep-edit/component.GroepEdit"
 import Screens from "./pages/screen/Screens"
 import FormKennisdeling from './components/forms/FormKennisdeling';
 import FormShowcaseProjecten from './components/forms/FormShowcaseProjecten';
@@ -38,6 +40,12 @@ function App() {
         </Route>
         <Route path="SlideOverzicht" element={<Layout />} >
           <Route index element={<SlideOverzicht />} />
+        </Route>
+        <Route path="GroepOverzicht" element={<Layout />} >
+          <Route index element={<GroepOverzicht />} />
+        </Route>        
+        <Route path="GroepEdit" element={<Layout />} >
+          <Route index element={<GroepEdit />} />
         </Route>
         <Route path="showcaseprojectenscreen" element={<Layout />} >
           <Route index element={<ShowcaseProjectenScreen />} />
