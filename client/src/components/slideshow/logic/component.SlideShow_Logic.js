@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import './style.SlideShow_Logic.scss';
-import DebugSlide from '../../debug-slide/component.DebugSlide';
-import KennisDelingSlide from "../../kennisdeling-slide/component.KennisdelingSlide";
+import DebugSlide from '../../slide-debug/component.DebugSlide';
+import KennisDelingSlide from "../../slide-kennisdeling/component.KennisdelingSlide";
+import ProjectShowcaseSlide from "../../slide-project-showcase/component.ProjectShowcaseSlide";
 import getSlides from '../fetchData/FetchData';
 
 function Slideshow({SecondsBetweenSlides}) {
@@ -87,6 +88,7 @@ function Slideshow({SecondsBetweenSlides}) {
   const slides = [
     <DebugSlide {...debugSlideInfo} />,
     <KennisDelingSlide slideData={slideData} />,
+    <ProjectShowcaseSlide />
     // <KennisDelingSlide {...kennisDelingInfoDupe} />
   ];
   
