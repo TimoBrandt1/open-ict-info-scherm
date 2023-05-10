@@ -48,6 +48,14 @@ function Slideshow({SecondsBetweenSlides}) {
     CurrentSlide: 'Debugslide',
     VideoAtributes: videoProps
   };
+  const SlideProjectShowcaseInfo = {
+    Project: 'Open-ICT info scherm',
+    Squad: 'Jesse, Owens, Timo, Ishak, Milan, Wail',
+    Details: 'Dit project moesten wij informatie van de Open-ICT laten zien op een fysiek scherm.',
+    Opdrachtgever: 'Inge/Bernard',
+    Src: { src: "images/testimage.jpg" },
+    Alt: 'This is a test image'
+  };
   
   const slideData = [
     {
@@ -88,7 +96,7 @@ function Slideshow({SecondsBetweenSlides}) {
   const slides = [
     <DebugSlide {...debugSlideInfo} />,
     <KennisDelingSlide slideData={slideData} />,
-    <ProjectShowcaseSlide />
+    <ProjectShowcaseSlide {...SlideProjectShowcaseInfo}/>
     // <KennisDelingSlide {...kennisDelingInfoDupe} />
   ];
   
