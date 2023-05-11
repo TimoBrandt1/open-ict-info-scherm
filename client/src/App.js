@@ -12,8 +12,9 @@ import GroepEdit from "./components/groep-edit/component.GroepEdit"
 import Screens from "./pages/screen/Screens"
 import FormKennisdeling from './components/forms/FormKennisdeling';
 import FormShowcaseProjecten from './components/forms/FormShowcaseProjecten';
-import ShowcaseProjectenScreen from './components/screen/ShowcaseProjectenScreen'
+import ShowcaseProjectenScreen from './components/screen/ShowcaseProjectenScreen';
 import ChooseForm from './components/forms/ChooseForm';
+import Settings from './components/settings/component.Settings';
 
 function App() {
   return (
@@ -52,6 +53,9 @@ function App() {
         </Route>
         <Route path="chooseform" element={<Layout />} >
           <Route index element={<ChooseForm />} />
+        </Route>
+        <Route path="settings" element={<Layout />} >
+          <Route index element={<Settings />} />
         </Route>
       </Routes>
     </BrowserRouter>
