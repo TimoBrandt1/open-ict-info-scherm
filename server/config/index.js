@@ -3,7 +3,7 @@ const port = 3000;
 const db = {
     host: 'localhost',
     user: 'root',
-    password: 'OpenScherm',
+    password: 'password',
     database: 'openictscherm'
 }
 

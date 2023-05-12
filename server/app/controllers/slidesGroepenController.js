@@ -49,7 +49,7 @@ const slidesGroepenController = {
     // data in groep zetten (dus groep aanmaken), zorg ervoor dat je dus de slideIDs toevoegd met comma's ertussen. Dus 23,35,56,78 etc.
     create: (req, res) => {
         connection.query(
-            'INSERT INTO `slidesGroepen` (`naam`, `slidesID`, `datum`, `tijd`, `details`) VALUES (?, ?, ?, ?, ?)',
+            'INSERT INTO `slidesgroepen` (`naam`, `slidesID`, `datum`, `tijd`, `details`) VALUES (?, ?, ?, ?, ?)',
             [req.body.naam, req.body.slidesID, req.body.datum, req.body.tijd, req.body.details],
             (err, results) => {
                 if (err) {
@@ -64,7 +64,7 @@ const slidesGroepenController = {
     // update groep by id
     putById: (req, res) => {
         connection.query(
-            'UPDATE `slidesGroepen` SET `naam` = ?, `slidesID` = ?, `datum` = ?, `tijd` = ?, `details` = ? WHERE `id` = ?',
+            'UPDATE `slidesgroepen` SET `naam` = ?, `slidesID` = ?, `datum` = ?, `tijd` = ?, `details` = ? WHERE `id` = ?',
             [req.body.naam, req.body.slidesID, req.body.datum, req.body.tijd, req.body.details, req.params.id],
             (err, results) => {
                 if (err) {

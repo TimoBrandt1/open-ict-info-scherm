@@ -6,7 +6,7 @@ const showcaseProjectenController = {
     // get all showcase projecten
     getAll: (req, res) => {
         connection.query(
-            'SELECT * FROM `formShowcaseProjecten`',
+            'SELECT * FROM `formshowcaseprojecten`',
             (err, results) => {
                 if (err) {
                     console.log(err);
@@ -20,7 +20,7 @@ const showcaseProjectenController = {
     // get showcase projecten by id
     getById: (req, res) => {
         connection.query(
-            'SELECT * FROM `formShowcaseProjecten` WHERE `id` = ?',
+            'SELECT * FROM `formshowcaseprojecten` WHERE `id` = ?',
             [req.params.id],
             (err, results) => {
                 if (err) {
@@ -35,7 +35,7 @@ const showcaseProjectenController = {
     // delete showcase projecten by id
     deleteById: (req, res) => {
         connection.query(
-            'DELETE FROM `formShowcaseProjecten` WHERE `id` = ?',
+            'DELETE FROM `formshowcaseprojecten` WHERE `id` = ?',
             [req.params.id],
             (err, results) => {
                 if (err) {
@@ -50,7 +50,7 @@ const showcaseProjectenController = {
     // create showcase projecten
     create: (req, res) => {
         connection.query(
-            'INSERT INTO `formShowcaseProjecten` (`onderwerp`, `details`, `image`) VALUES (?, ?, ?)',
+            'INSERT INTO `formshowcaseprojecten` (`onderwerp`, `details`, `image`) VALUES (?, ?, ?)',
             [req.body.onderwerp, req.body.details, Buffer.from(req.body.image.buffer, 'base64')],
             (err, results) => {
                 if (err) {
@@ -65,7 +65,7 @@ const showcaseProjectenController = {
     // update showcase projecten by id
     putById: (req, res) => {
         connection.query(
-            'UPDATE `formShowcaseProjecten` SET `onderwerp` = ?, `details` = ?, `image` = ? WHERE `id` = ?',
+            'UPDATE `formshowcaseprojecten` SET `onderwerp` = ?, `details` = ?, `image` = ? WHERE `id` = ?',
             [req.body.onderwerp, req.body.details, Buffer.from(req.body.image.buffer, 'base64'), req.params.id],
             (err, results) => {
                 if (err) {
