@@ -13,7 +13,7 @@ function SlideOverzicht() {
   //fetches array 'slides'
   const [slides, setData] = useState([]); // array of objects
   const getData = async () => {
-          const response = await fetch('http://145.89.192.107/api/kennisdeling');
+          const response = await fetch('http://127.0.0.1:3306/');
           const singleData = await response.json();
           setData(singleData);
           setSlides(singleData)

@@ -41,7 +41,7 @@ function FormBasic({initialValues, endpoint}) {
 
 
             console.log(requestBody);
-            fetch('http://145.89.192.107/api' + endpoint, {
+            fetch('http://127.0.0.1:3306' + endpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -11,7 +11,7 @@ function Slideshow({SecondsBetweenSlides}) {
   
   const getData = async (id, setData) => {
     try {
-      const response = await fetch(`http://145.89.192.107/api/kennisdeling/${id}`);
+      const response = await fetch(`http://127.0.0.1:3306/${id}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
