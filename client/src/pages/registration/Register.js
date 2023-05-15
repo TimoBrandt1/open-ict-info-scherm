@@ -92,12 +92,14 @@ const Register = () => {
                     </p>
                 </section>
             ) : (
-                <section>
+                <div className="registerbg">
+                <div className="containerbox">
+                <section className="box1">
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Register</h1>
+                    <h1 className="register">Aanmelden</h1>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">
-                            Username:
+                            Gebruikersnaam:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
                         </label>
@@ -116,14 +118,13 @@ const Register = () => {
                         />
                         <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
-                            4 to 24 characters.<br />
-                            Must begin with a letter.<br />
-                            Letters, numbers, underscores, hyphens allowed.
-                        </p>
+                            4 tot 24 tekens.<br />
+                            Moet beginnen met een letter.<br />
+                            Letters, cijfers, onderstrepingstekens, koppeltekens toegestaan. </p>
 
 
                         <label htmlFor="password">
-                            Password:
+                            Wachtwoord:
                             <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                         </label>
@@ -140,14 +141,14 @@ const Register = () => {
                         />
                         <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
-                            8 to 24 characters.<br />
-                            Must include uppercase and lowercase letters, a number and a special character.<br />
-                            Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
+                            8 tot 24 tekens.<br />
+                            Moet hoofdletters en kleine letters, een cijfer en een speciaal teken bevatten.<br />
+                            Toegestane speciale tekens: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
                         </p>
 
 
                         <label htmlFor="confirm_pwd">
-                            Confirm Password:
+                            Bevestig wachtwoord:
                             <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                         </label>
@@ -164,19 +165,24 @@ const Register = () => {
                         />
                         <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
-                            Must match the first password input field.
+                            Moet overeenkomen met het eerste wachtwoord.
                         </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        <button className="aanmeldenknop" disabled={!validName || !validPwd || !validMatch ? true : false}>Aanmelden</button>
                     </form>
-                    <p>
-                        Already registered?<br />
-                        <span className="line">
-                            {/*put router link here*/}
-                            <a href="/login">Sign In</a>
-                        </span>
-                    </p>
+                    
                 </section>
+                <div className="box2">
+            
+                    <div className="text1">
+                        <p>Heb je al een account?</p>
+                    </div>
+                    <div className="loginbutton">
+                    <a href="/login"><button className="loginknop">Klik hier om in te loggen</button></a>
+                    </div>
+                </div>
+                </div>
+                </div>
             )}
         </>
     )

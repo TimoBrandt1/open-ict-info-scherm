@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from "./context/AuthProvider";
 import axios from '../registration/api/axios';
+import './style.Login.scss'
 
 
 const LOGIN_URL = '/auth';
@@ -67,11 +68,13 @@ const Login = () => {
                     </p>
                 </section>
             ) : (
-                <section>
+                <div className="loginbg">
+                    <div className="containerbox">
+                <section classname= "box1">
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Sign In</h1>
+                    <h1 className='inloggen'>Bestaand account</h1>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="username">Username:</label>
+                        <label htmlFor="username">Gebruikersnaam:</label>
                         <input
                             type="text"
                             id="username"
@@ -82,7 +85,7 @@ const Login = () => {
                             required
                         />
 
-                        <label htmlFor="password">Password:</label>
+                        <label htmlFor="password">Wachtwoord:</label>
                         <input
                             type="password"
                             id="password"
@@ -90,16 +93,21 @@ const Login = () => {
                             value={pwd}
                             required
                         />
-                        <button>Sign In</button>
+                        <button className='inlogbutton'>Inloggen</button>
                     </form>
-                    <p>
-                        Need an Account?<br />
-                        <span className="line">
-                            {/*put router link here*/}
-                            <a href="/register">Sign Up</a>
-                        </span>
-                    </p>
+                
                 </section>
+                <div className="box2">
+            
+                    <div className="text1">
+                        <p>Heb je nog geen account?</p>
+                    </div>
+                    <div className="loginbutton">
+                    <a href="/register"><button className="loginknop">Klik hier om te aanmelden</button></a>
+                    </div>
+                </div>
+                </div>
+                </div>
             )}
         </>
     )
