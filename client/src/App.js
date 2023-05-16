@@ -14,6 +14,8 @@ import FormKennisdeling from './components/forms/FormKennisdeling';
 import FormShowcaseProjecten from './components/forms/FormShowcaseProjecten';
 import ShowcaseProjectenScreen from './components/screen/ShowcaseProjectenScreen'
 import ChooseForm from './components/forms/ChooseForm';
+import Register from './pages/registration/Register';
+import Login from './pages/login/Login';
 
 function App() {
   return (
@@ -52,6 +54,12 @@ function App() {
         </Route>
         <Route path="chooseform" element={<Layout />} >
           <Route index element={<ChooseForm />} />
+        </Route>
+        <Route path="register" element={<Layout />} >
+          <Route index element={<Register />} />
+        </Route>
+        <Route path="login" element={<Layout />} >
+          <Route index element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>
