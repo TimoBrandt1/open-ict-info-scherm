@@ -61,10 +61,10 @@ const Login = () => {
         <>
             {success ? (
                 <section>
-                    <h1>You are logged in!</h1>
+                    <h1>Je bent ingelogd</h1>
                     <br />
                     <p>
-                        <a href="#">Go to Home</a>
+                        <a href="/Screen">Ga naar het portaal</a>
                     </p>
                 </section>
             ) : (
