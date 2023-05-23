@@ -106,7 +106,11 @@ function GroepOverzicht() {
         {Array.from(Array(groupsOrder.length).keys()).map((id) => (
                 <scr>
                   <div className='scherm'>
+<<<<<<< Updated upstream
                   <a href={ '/GroepEdit?GroepId=' + groupsOrder[id].id }><div class='optie' >E</div></a>
+=======
+                  <a href={ '/groep-aanpassen?GroepId=' + groupsOrder[id].id }><div class='optie' >E</div></a>
+>>>>>>> Stashed changes
                     <div class='optie'>i</div>
                     <div class='optie'>D</div>
                   </div>
