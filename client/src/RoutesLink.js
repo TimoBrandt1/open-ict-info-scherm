@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage";
 import SlideAanmaken from "./pages/SlideAanmaken";
 import SlideAanpassen from "./pages/SlideAanpassen";
 import SlideBeheer from "./pages/SlideBeheer";
+import GroepBeheer from "./pages/GroepBeheer";
+import GroepAanpassen from "./pages/GroepAanpassen";
 
 //End of Pages import
 
@@ -20,6 +22,10 @@ const RoutesLink = () => {
       <Route exact path="/slide-aanmaken" element={<SlideAanmaken />} />
       {/* Import Routes here : */}
       <Route exact path="/slide-aanpassen" element={<SlideAanpassen />} />
+      {/* Import Routes here : */}
+      <Route exact path="/groep-beheer" element={<GroepBeheer />} />
+      {/* Import Routes here : */}
+      <Route exact path="/groep-aanpassen" element={<GroepAanpassen />} />
     </Routes>
   );
 };

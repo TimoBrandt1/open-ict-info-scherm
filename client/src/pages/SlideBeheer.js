@@ -1,7 +1,12 @@
 import React from "react";
+import SlideOverzicht from '../components/slide-overzicht/component.SlideOverzicht';
 
 const SlideBeheer = () => {
-  return <h1>Slide Beheer</h1>;
+  return (
+    <div>
+      <SlideOverzicht src="/slide-overzicht"/>
+    </div>
+  )
 };
 
 export default SlideBeheer;
