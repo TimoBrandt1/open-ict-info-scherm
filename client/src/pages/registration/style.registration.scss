@@ -149,9 +149,9 @@ button {
 }
 
 .text1 {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 15px;
     text-align: center;
+    font-weight: 400;
 }
 
 .loginbutton {
@@ -173,4 +173,15 @@ button {
 
 .loginknop:hover {
     background-color: lightgray;
+}
+
+.inloggentekst {
+    font-size: 15px;
+    text-decoration: underline;
+
+}
+
+::placeholder {
+    font-size: 12px;
+    padding-left: 10px;
 }

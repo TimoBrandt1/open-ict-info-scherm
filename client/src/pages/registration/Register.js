@@ -96,16 +96,17 @@ const Register = () => {
                 <div className="containerbox">
                 <section className="box1">
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1 className="register">Aanmelden</h1>
+                    <h1 className="register">Registreren</h1>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">
-                            Gebruikersnaam:
+                            Hoe mogen we je noemen?
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="text"
                             id="username"
+                            placeholder="Voer een profielnaam in."
                             ref={userRef}
                             autoComplete="off"
                             onChange={(e) => setUser(e.target.value)}
@@ -124,13 +125,14 @@ const Register = () => {
 
 
                         <label htmlFor="password">
-                            Wachtwoord:
+                            Wachtwoord maken
                             <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="password"
                             id="password"
+                            placeholder="Maak een wachtwoord."
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}
                             required
@@ -148,13 +150,14 @@ const Register = () => {
 
 
                         <label htmlFor="confirm_pwd">
-                            Bevestig wachtwoord:
+                            Bevestig wachtwoord
                             <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="password"
                             id="confirm_pwd"
+                            placeholder="Bevestig wachtwoord."
                             onChange={(e) => setMatchPwd(e.target.value)}
                             value={matchPwd}
                             required
@@ -175,11 +178,12 @@ const Register = () => {
                 <div className="box2">
             
                     <div className="text1">
-                        <p>Heb je al een account?</p>
+                        <p>Heb je een account?</p>
+                        <a className="inloggentekst" href="/login">Inloggen</a>
                     </div>
-                    <div className="loginbutton">
+                    {/* <div className="loginbutton">
                     <a href="/login"><button className="loginknop">Klik hier om in te loggen</button></a>
-                    </div>
+                    </div> */}
                 </div>
                 </div>
                 </div>

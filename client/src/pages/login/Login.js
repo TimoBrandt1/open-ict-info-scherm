@@ -74,10 +74,11 @@ const Login = () => {
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1 className='inloggen'>Bestaand account</h1>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="username">Gebruikersnaam:</label>
+                        <label htmlFor="username">Gebruikersnaam</label>
                         <input
                             type="text"
                             id="username"
+                            placeholder="Gebruikersnaam"
                             ref={userRef}
                             autoComplete="off"
                             onChange={(e) => setUser(e.target.value)}
@@ -85,9 +86,10 @@ const Login = () => {
                             required
                         />
 
-                        <label htmlFor="password">Wachtwoord:</label>
+                        <label htmlFor="password">Wachtwoord</label>
                         <input
                             type="password"
+                            placeholder="Wachtwoord"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}
@@ -101,10 +103,11 @@ const Login = () => {
             
                     <div className="text1">
                         <p>Heb je nog geen account?</p>
+                        <a className='inloggentekst' href='/register'>Nieuw account</a>
                     </div>
-                    <div className="loginbutton">
+                    {/* <div className="loginbutton">
                     <a href="/register"><button className="loginknop">Klik hier om te aanmelden</button></a>
-                    </div>
+                    </div> */}
                 </div>
                 </div>
                 </div>
