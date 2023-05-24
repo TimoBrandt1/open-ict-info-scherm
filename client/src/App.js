@@ -16,6 +16,7 @@ import ShowcaseProjectenScreen from './components/screen/ShowcaseProjectenScreen
 import ChooseForm from './components/forms/ChooseForm';
 import Register from './pages/registration/Register';
 import Login from './pages/login/Login';
+import Screenone from './pages/livescreen/Screenone';
 
 function App() {
   return (
@@ -60,6 +61,9 @@ function App() {
         </Route>
         <Route path="login" element={<Layout />} >
           <Route index element={<Login />} />
+        </Route>
+        <Route path="Screenone" element={<Layout />} >
+          <Route index element={<Screenone />} />
         </Route>
       </Routes>
     </BrowserRouter>
