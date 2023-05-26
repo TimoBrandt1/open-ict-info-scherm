@@ -23,7 +23,7 @@ const StorageKeys = {
 
 const WIDGET_LAYOUTS = {
   kennisdeling1: {
-    sm: { x: 0, y: 0, w: 2, h: 10 },
+    sm: { x: 0, y: 0, w: 2, h: 2 },
 
   },
   kennisdeling2: {
@@ -32,7 +32,6 @@ const WIDGET_LAYOUTS = {
   },
   kennisdeling3: {
     sm: { x: 0, y: 0, w: 2, h: 2 },
-        lg: { x: 2, y: 0, w: 8, h: 2 },
 
 
   },
@@ -164,6 +163,8 @@ const Screenone = () => {
       cols={4}
       margin={[20, 20]}
       rowHeight={100}
+      breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+
       width={1400}
       onLayoutChange={onLayoutChange}
     >
@@ -173,9 +174,9 @@ const Screenone = () => {
       <div key={WidgetIdentifiers.KENNISDELING2}>
         <NormalWidget title="Purchase" />
       </div>
-      {/* <div key={WidgetIdentifiers.KENNISDELING3}>
+      <div key={WidgetIdentifiers.KENNISDELING3}>
         <NormalWidget title="Purchase" />
-      </div> */}
+      </div>
       <div key={WidgetIdentifiers.KENNISDELING4}>
         <NormalWidget title="Purchase" />
       </div>
@@ -190,14 +191,14 @@ const Screenone = () => {
          
       </div> */}
 
-      <div key={WidgetIdentifiers.KENNISDELING3}>
+      {/* <div key={WidgetIdentifiers.KENNISDELING3}>
         <ResizableWidget
           title="Earnings"
           identifier={WidgetIdentifiers.KENNISDELING3}
           onUpdate={onWidgetUpdate}
           size={kennisdeling3Props?.size}
         />
-      </div>
+      </div> */}
 
 
     </GridLayout>
