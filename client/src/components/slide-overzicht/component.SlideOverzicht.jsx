@@ -1,5 +1,6 @@
 import React from 'react';
-import './style.SlideOverzicht.scss';
+import './style.SlideOverzicht.scss'
+import {  SContainer} from "./styles";
 import { useState, useEffect } from 'react'
 
 
@@ -81,15 +82,15 @@ function SlideOverzicht() {
   return (
     <div className="slideOverzicht">
       
-      <container>  
+      <SContainer>  
       <div className='filters'>
-        <select name="Sorteren" id="Sorteren" onChange={(event) => addSort(event.target.value)& sort(event.target.value)}>
+        <select class="input" name="Sorteren" id="Sorteren" onChange={(event) => addSort(event.target.value)& sort(event.target.value)}>
           <option value="A+">Alfabetisch (A-Z)</option>
           <option value="A-">Alfabetisch (Z-A)</option>
           <option value="D+">Datum (vroegst eerst)</option>
           <option value="D-">Datum (laatst eerst)</option>
         </select>
-        <input id="searchInput" type="text" placeholder="Search" onChange={(event) => sort(event.target.value)}/>
+        <input class="input" id="searchInput" type="text" placeholder="Search" onChange={(event) => sort(event.target.value)}/>
         <button id="enter" value="D+" onClick={(event) => sort(event.target.value)}>filter</button>
       </div>
       <div id='overzicht'>
@@ -104,7 +105,7 @@ function SlideOverzicht() {
             ))}
       </div>
 
-      </container>
+      </SContainer>
     </div>
   );
 }

@@ -92,12 +92,20 @@ const Sidebar = () => {
         );
       })}
       <SDivider />
-      {secondaryLinksArray.map(({ icon, label }) => {
+      {secondaryLinksArray.map(({ icon, label, notification, to }) => {
         return (
-          <SLinkContainer key={label}>
-            <SLink to="/" style={!sidebarOpen ? { width: `fit-content` } : {}}>
+          <SLinkContainer key={label} isActive={pathname === to}>
+            <SLink to={to} style={!sidebarOpen ? { width: `fit-content` } : {}}>
               <SLinkIcon>{icon}</SLinkIcon>
-              {sidebarOpen && <SLinkLabel>{label}</SLinkLabel>}
+              {sidebarOpen && (
+                <>
+                  <SLinkLabel>{label}</SLinkLabel>
+                  {/* If notification is 0, do not display : */}
+                  {!!notification && (
+                    <SLinkNotification>{notification}</SLinkNotification>
+                  )}
+                </>
+              )}
             </SLink>
           </SLinkContainer>
         );
@@ -141,6 +149,8 @@ const secondaryLinksArray = [
   {
     label: "Settings",
     icon: <AiOutlineSetting />,
+    to: "/settings",
+    notification: 0,
   },
   {
     label: "Logout",

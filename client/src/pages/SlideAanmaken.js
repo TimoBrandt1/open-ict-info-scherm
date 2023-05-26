@@ -1,7 +1,11 @@
 import React from "react";
+import GlobalThemeFetcher from '../components/global-theme-fetcher/component.GlobalThemeFetcher';
 
 const SlideAanmaken = () => {
-  return <h1>Slide Aanmaken</h1>;
+  return <h1>
+  < GlobalThemeFetcher/>
+    Slide Aanmaken
+  </h1>;
 };
 
 export default SlideAanmaken;

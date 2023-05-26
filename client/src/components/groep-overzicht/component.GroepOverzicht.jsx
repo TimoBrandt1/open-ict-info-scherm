@@ -1,5 +1,6 @@
 import React from 'react';
-import './style.GroepOverzicht.scss';
+import {  SContainer} from "./styles";
+import './style.GroepOverzicht.scss'
 import { useState, useEffect } from 'react'
 
 import {TempData} from '../TempData.js';
@@ -8,9 +9,8 @@ import {TempData} from '../TempData.js';
 
 
 
-
-
 function GroepOverzicht() {
+
   // //fetches array 'groups'
   // const [groups, setData] = useState([]); //array of objects
   // const getData = async () => {
@@ -34,11 +34,13 @@ function GroepOverzicht() {
   useEffect(() => {
     setData(TempData);
     setGroups(TempData);
+
   }, []);
 
 
   function addSort(filter) {
     document.getElementById("sorteren").value = filter
+    sort(filter)
   }
 
 
@@ -76,11 +78,9 @@ function GroepOverzicht() {
   console.log("Searching for "+searchInput)
 
   let filteredArray = new Array();
-  console.log(filteredArray)
-  console.log("^^^")
-  
+
   Array.from(Array(groupsOrder.length).keys()).map((id) => {
-    if (groupsOrder[id].spreker.toLowerCase().includes(searchInput)) {
+    if (groupsOrder[id].titel.toLowerCase().includes(searchInput)) {
       filteredArray.push (groupsOrder[id])
     }
   })
@@ -92,9 +92,9 @@ function GroepOverzicht() {
   return (
     <div className="groepOverzicht">
       
-      <container>  
+      <SContainer>  
       <div className='filters'>
-        <select class="input" name="sorteren" id="sorteren" onChange={(event) => addSort(event.target.value)& sort(event.target.value)}>
+        <select class="input" name="sorteren" id="sorteren" onChange={(event) => addSort(event.target.value)}>
           <option value="A+">Alfabetisch (A-Z)</option>
           <option value="A-">Alfabetisch (Z-A)</option>
           <option value="D+">Datum (vroegst eerst)</option>
@@ -118,7 +118,7 @@ function GroepOverzicht() {
             ))}
       </div>
 
-      </container>
+      </SContainer>
     </div>
   );
 }

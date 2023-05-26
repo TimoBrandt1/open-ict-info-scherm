@@ -10,7 +10,6 @@
 }
 
 scr {
-    border: 1px dotted black;
     padding: 5px;
     display: inline-block;
     width: 20em;
@@ -26,10 +25,16 @@ scr {
     display: inline-block;
 }
 
-container {
-    border: 1px solid black;
+.input {
+    background-color: #aaa8ab;
     margin: 10px;
-    padding: 5px;
-    display: inline-block;
-    width: fit-content;
+    border-radius: 1em;
+    border: none;
 }
+
+//container {
+//    margin: 10px;
+//    padding: 5px;
+//    display: inline-block;
+//    width: fit-content;
+//}

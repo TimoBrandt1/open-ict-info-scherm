@@ -14,3 +14,11 @@ export const darkTheme = {
   text: "rgba(210, 210, 210)",
   primary: "rgb(52, 131, 235)",
 };
+export const contrastTheme = {
+  bg: "rgb(255, 255, 255)",
+  bgAlpha: "rgba(250, 250, 250, 0.3)",
+  bg2: "rgba(245, 245, 245)",
+  bg3: "rgba(230, 230, 230)",
+  text: "rgba(0, 0, 0)",
+  primary: "rgb(52, 131, 235)",
+};
