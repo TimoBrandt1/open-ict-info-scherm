@@ -16,6 +16,7 @@
     "sass": "^1.62.0",
     "semantic-ui-react": "^2.1.4",
     "styled-components": "^5.3.10",
+    "sweetalert": "^2.1.2",
     "sweetalert2": "^11.7.5",
     "web-vitals": "^2.1.4"
   },

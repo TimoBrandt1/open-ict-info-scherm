@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
+import Swal from 'sweetalert';
 import {
   SLink,
   SLinkContainer,
@@ -154,8 +155,10 @@ const secondaryLinksArray = [
   },
   {
     label: "Logout",
-    icon: <MdLogout />,
+    icon: <button><MdLogout /></button>,
+    to: "/test",
   },
 ];
+
 
 export default Sidebar;
