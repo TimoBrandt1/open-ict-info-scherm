@@ -67,8 +67,9 @@ function Slideshow({SecondsBetweenSlides}) {
   
   const slides = [
     <DebugSlide {...debugSlideInfo} />,
-    <KennisDelingSlide {...kennisDelingInfo} />,
-    <KennisDelingSlide {...kennisDelingInfoDupe} />
+    <KennisDelingSlide/>,
+    // <KennisDelingSlide {...kennisDelingInfo} />,
+    // <KennisDelingSlide {...kennisDelingInfoDupe} />
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
