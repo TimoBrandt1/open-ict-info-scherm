@@ -35,7 +35,7 @@ const App = () => {
           </Layout>
         </>
       </ThemeProvider>
-      ;
+      
     </ThemeContext.Provider>
   );
 };

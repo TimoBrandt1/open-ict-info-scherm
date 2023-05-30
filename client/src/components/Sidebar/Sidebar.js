@@ -26,7 +26,7 @@ import {
   AiOutlineSetting,
 } from "react-icons/ai";
 import { SDivider } from "../Layout/styles";
-import { MdAreaChart, MdLogout } from "react-icons/md";
+import { MdBackupTable, MdLogout, MdAssignment, MdAspectRatio, MdDashboardCustomize } from "react-icons/md";
 
 import { ThemeContext } from "./../../App";
 import { useLocation } from "react-router";
@@ -132,15 +132,27 @@ const linksArray = [
     notification: 0,
   },
   {
-    label: "Slides",
-    icon: <MdAreaChart />,
-    to: "/slide-beheer",
-    notification: 2,
+    label: "Groepen",
+    icon: <MdDashboardCustomize />,
+    to: "/groep-beheer",
+    notification: 0,
   },
   {
-    label: "Groepen",
-    icon: <AiOutlineHome />,
-    to: "/groep-beheer",
+    label: "Slides",
+    icon: <MdBackupTable />,
+    to: "/slide-beheer",
+    notification: 1,
+  },
+  {
+    label: "Formulieren",
+    icon: <MdAssignment />,
+    to: "/formulieren",
+    notification: 0,
+  },
+  {
+    label: "Scherm",
+    icon: <MdAspectRatio />,
+    to: "/screen",
     notification: 0,
   },
 ];

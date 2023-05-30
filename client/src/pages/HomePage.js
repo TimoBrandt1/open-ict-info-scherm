@@ -6,9 +6,10 @@ import GlobalThemeFetcher from '../components/global-theme-fetcher/component.Glo
 
 function HomePage() {
     return (
-        <div>
+        <div class="HomeScreen">
             <GlobalThemeFetcher/>
                 <content>
+                    <h1>Home Screen</h1>
                     <ScreenReplication src="/screen"/>
                 </content>
         </div>
