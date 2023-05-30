@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "./styles/theme";
+import { contrastTheme, darkTheme, lightTheme, skyTheme } from "./styles/theme";
 import { GlobalStyle } from "./styles/globalStyle";
 import { Helmet } from "react-helmet";
 import Layout from "./components/Layout/Layout";
@@ -10,7 +10,11 @@ export const ThemeContext = React.createContext(null);
 
 const App = () => {
   const [theme, setTheme] = useState("light");
-  const themeStyle = theme === "light" ? lightTheme : darkTheme;
+   const themeStyle = 
+   theme === "light" ? lightTheme : 
+   theme === "dark" ? darkTheme : 
+   theme === "contrast" ? contrastTheme :
+   skyTheme;
 
   return (
     <ThemeContext.Provider value={{ setTheme, theme }}>

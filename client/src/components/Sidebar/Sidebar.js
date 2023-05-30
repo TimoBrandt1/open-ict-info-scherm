@@ -140,7 +140,7 @@ const linksArray = [
   {
     label: "Groepen",
     icon: <AiOutlineHome />,
-    to: "/??",
+    to: "/groep-beheer",
     notification: 0,
   },
 ];

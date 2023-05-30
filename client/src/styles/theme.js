@@ -17,8 +17,16 @@ export const darkTheme = {
 export const contrastTheme = {
   bg: "rgb(255, 255, 255)",
   bgAlpha: "rgba(250, 250, 250, 0.3)",
-  bg2: "rgba(245, 245, 245)",
+  bg2: "rgba(255, 255, 255)",
   bg3: "rgba(230, 230, 230)",
   text: "rgba(0, 0, 0)",
-  primary: "rgb(52, 131, 235)",
+  primary: "rgb(00, 50, 255)",
+};
+export const skyTheme = {
+  bg: "rgb(222, 229, 255)",
+  bgAlpha: "rgba(250, 250, 250, 0.3)",
+  bg2: "rgb(207, 210, 255)",
+  bg3: "rgb(182, 187, 237)",
+  text: "rgb(26, 33, 57)",
+  primary: "rgb(85, 106, 191)",
 };

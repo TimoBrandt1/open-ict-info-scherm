@@ -39,6 +39,7 @@ const Settings = () => {
           <option id="light" value="light">Licht</option>
           <option id="dark" value="dark">Donker</option>
           <option id="contrast" value="contrast">Verhoogd contrast</option>
+          <option id="sky" value="sky">Zacht Donkerblauw</option>
         </select>
         <h2>Account</h2>
         Emailadres machtigen<br/>
