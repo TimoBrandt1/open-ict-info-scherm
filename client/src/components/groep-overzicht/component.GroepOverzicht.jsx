@@ -3,6 +3,8 @@ import {  SContainer} from "./styles";
 import './style.GroepOverzicht.scss'
 import { useState, useEffect } from 'react'
 
+import Swal from 'sweetalert2'
+
 import {TempData} from '../TempData.js';
 
 
@@ -89,6 +91,28 @@ function GroepOverzicht() {
   };
 
 
+  const Alert = () =>{
+    Swal.fire({
+      title: 'Weet je het zeker?',
+      text: "Je kunt dit niet ongedaan maken!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Ja, verwijder het!',
+      cancelButtonText: 'Annuleren'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Verwijderd!',
+          'De groep is verwijderd',
+          'success'
+        )
+      }
+    })
+  }
+
+
   return (
     <div className="groepOverzicht">
       
@@ -106,9 +130,9 @@ function GroepOverzicht() {
         {Array.from(Array(groupsOrder.length).keys()).map((id) => (
                 <scr>
                   <div className='scherm'>
-                  <a href={ '/groep-aanpassen?GroepId=' + groupsOrder[id].id }><div class='optie' >E</div></a>
-                    <div class='optie'>i</div>
-                    <div class='optie'>D</div>
+                  <a href={ '/groep-aanpassen?GroepId=' + groupsOrder[id].id }><button class='optie' >E</button></a>
+                    <button class='optie'>i</button>
+                    <button className='optie' onClick={Alert}>D</button>
                   </div>
                   
                     <br/>{(groupsOrder[id].titel)}
