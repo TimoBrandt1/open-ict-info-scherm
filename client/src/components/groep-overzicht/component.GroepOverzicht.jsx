@@ -1,8 +1,9 @@
 import React from 'react';
 import './style.GroepOverzicht.scss';
 import { useState, useEffect } from 'react'
-
+import Swal from 'sweetalert2'
 import {TempData} from '../TempData.js';
+
 
 
 
@@ -88,6 +89,26 @@ function GroepOverzicht() {
   setGroups(filteredArray)
   };
 
+  const Alert = () =>{
+  Swal.fire({
+    title: 'Weet je het zeker?',
+    text: "Je kunt dit niet ongedaan maken!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Ja, verwijder het!',
+    cancelButtonText: 'Annuleren'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Verwijderd!',
+        'De groep is verwijderd',
+        'success'
+      )
+    }
+  })
+}
 
   return (
     <div className="groepOverzicht">
@@ -108,7 +129,7 @@ function GroepOverzicht() {
                   <div className='scherm'>
                   <a href={ '/GroepEdit?GroepId=' + groupsOrder[id].id }><div class='optie' >E</div></a>
                     <div class='optie'>i</div>
-                    <div class='optie'>D</div>
+                    <button className='optie' onClick={Alert}>D</button>
                   </div>
                   
                     <br/>{(groupsOrder[id].titel)}

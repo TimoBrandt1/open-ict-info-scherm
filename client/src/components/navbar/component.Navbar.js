@@ -1,6 +1,7 @@
 import React from "react";
 import './style.Navbar.scss';
 import { BrowserRouter, Route, Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 function closeNavbar() {
@@ -20,6 +21,24 @@ if (opened) {
   }
 }
 
+}
+
+
+const Alert = () =>{
+  Swal.fire({
+    title: 'Weet je het zeker?',
+    text: "Je zal opnieuw moeten inloggen",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Ja, ik wil uitloggen',
+    cancelButtonText: 'Annuleren'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      
+    }
+  })
 }
 
 function Navbar() {
@@ -75,7 +94,7 @@ function Navbar() {
         </li>
         {/* Logout DOM */}
         <li>
-          <Link to="/">Uitloggen knop</Link>
+          <Link to="/" onClick={Alert}>Uitloggen knop</Link>
         </li>
 
       </ul>
