@@ -11,6 +11,8 @@ import GroepAanpassen from "./pages/GroepAanpassen";
 import Settings from "./pages/Settings";
 import Formulieren from "./pages/Formulieren";
 import Screen from "./pages/Screen";
+import Login from './pages/login/Login'
+import Register from './pages/registration/Register'
 
 //End of Pages import
 
@@ -35,6 +37,11 @@ const RoutesLink = () => {
       <Route exact path="/formulieren" element={<Formulieren />} />
       {/* Import Routes here : */}
       <Route exact path="/screen" element={<Screen />} />
+      {/* Import Routes here : */}
+      <Route exact path="/login" element={<Login />} />
+      {/* Import Routes here : */}
+      <Route exact path="/register" element={<Register />} />
+      
     </Routes>
   );
 };
