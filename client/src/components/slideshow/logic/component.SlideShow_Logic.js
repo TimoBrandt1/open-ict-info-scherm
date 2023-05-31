@@ -4,6 +4,8 @@ import DebugSlide from '../../slide-debug/component.DebugSlide';
 import KennisDelingSlide from "../../slide-kennisdeling/component.KennisdelingSlide";
 import ProjectShowcaseSlide from "../../slide-project-showcase/component.ProjectShowcaseSlide";
 import SlideProjectShowcaseInfo from '../../../json/showcaseProjecten.json';
+import KennisDelingSlideInfo from '../../../json/kennisdelingen.json';
+import DebugSlideInfo from '../../../json/debugSlideInfo.json';
 
 function Slideshow({SecondsBetweenSlides}) {
   // Slides information, should later be moved to other file.
@@ -31,73 +33,10 @@ function Slideshow({SecondsBetweenSlides}) {
     ]).catch(error => console.error('Error fetching data:', error));
   }, []);
   
-
-  const videoProps = {
-    vSrc: { src: "videos/DebugSlideVideo.mp4" },
-    vType: { type: "video/mp4" },
-    vWidth: 640,
-    vHeight: 360,
-    vAutoplay: true,
-    vControls: false,
-    vMuted: true
-  };
-  
-  const debugSlideInfo = {
-    ScreenName: 'Screen 1',
-    GroupName: 'Group Debugslide',
-    CurrentSlide: 'Debugslide',
-    VideoAtributes: videoProps
-  };
-  const SlideProjectShowcaseInfo = {
-    Project: 'Open-ICT info scherm',
-    Squad: 'Jesse, Owens, Timo, Ishak, Milan, Wail',
-    Details: 'Dit project moesten wij informatie van de Open-ICT laten zien op een fysiek scherm.',
-    Opdrachtgever: 'Inge/Bernard',
-    Src: { src: "images/testimage.jpg" },
-    Alt: 'This is a test image'
-  };
-  
-  const slideData = [
-    {
-      Subject: data1.onderwerp || "",
-      Speaker: data1.spreker || "",
-      Location: data1.locatie || "",
-      Time: data1.tijd || "",
-      Datum: data1.datum || "",
-      Details: data1.details || ""
-    },
-    {
-      Subject: data2.onderwerp || "",
-      Speaker: data2.spreker || "",
-      Location: data2.locatie || "",
-      Time: data2.tijd || "",
-      Datum: data2.datum || "",
-      Details: data2.details || ""
-    },
-    {
-      Subject: data1.onderwerp || "",
-      Speaker: data1.spreker || "",
-      Location: data1.locatie || "",
-      Time: data1.tijd || "",
-      Datum: data1.datum || "",
-      Details: data1.details || ""
-    },
-    {
-      Subject: data2.onderwerp || "",
-      Speaker: data2.spreker || "",
-      Location: data2.locatie || "",
-      Time: data2.tijd || "",
-      Datum: data2.datum || "",
-      Details: data2.details || ""
-    }
-  ];
-  
-
-  
   // Array of slides
   const slides = [
-    <DebugSlide {...debugSlideInfo} />,
-    <KennisDelingSlide slideData={slideData} />,
+    <DebugSlide {...DebugSlideInfo} />,
+    <KennisDelingSlide slideData={KennisDelingSlideInfo} />,
     <ProjectShowcaseSlide {...SlideProjectShowcaseInfo}/>
     // <KennisDelingSlide {...kennisDelingInfoDupe} />
   ];

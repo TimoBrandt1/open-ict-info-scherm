@@ -1,0 +1,34 @@
+[
+    {
+      "Subject": "AI",
+      "Speaker": "Ishak, Wail",
+      "Location": "Hogeschool Utrecht",
+      "Time": "11:45",
+      "Datum": "1 Juni",
+      "Details": "Wees bang want AI!"
+    },
+    {
+      "Subject": "Machine Learning",
+      "Speaker": "Timo",
+      "Location": "Hogeschool Utrecht",
+      "Time": "10:20",
+      "Datum": "7 Juni",
+      "Details": "Machine learning uitgelecht"
+    },
+    {
+      "Subject": "Back end",
+      "Speaker": "Milan",
+      "Location": "Hogeschool Utrecht",
+      "Time": "11:00",
+      "Datum": "13 July",
+      "Details": "Informatie over back end"
+    },
+    {
+      "Subject": "Front end",
+      "Speaker": "Jesse, Owens",
+      "Location": "Hogeschool Utrecht",
+      "Time": "09:15",
+      "Datum": "28 July",
+      "Details": "Dit gaat over front end, wees er bij"
+    }
+  ]

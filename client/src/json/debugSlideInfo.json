@@ -1,0 +1,14 @@
+{
+    "ScreenName": "Screen 1",
+    "GroupName": "Group Debugslide",
+    "CurrentSlide": "Debugslide",
+    "VideoAtributes": {
+      "vSrc": { "src": "videos/DebugSlideVideo.mp4" },
+      "vType": { "type": "video/mp4" },
+      "vWidth": 640,
+      "vHeight": 360,
+      "vAutoplay": true,
+      "vControls": false,
+      "vMuted": true
+    }
+  }
