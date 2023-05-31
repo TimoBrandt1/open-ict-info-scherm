@@ -3,7 +3,6 @@ import './style.SlideShow_Logic.scss';
 import DebugSlide from '../../slide-debug/component.DebugSlide';
 import KennisDelingSlide from "../../slide-kennisdeling/component.KennisdelingSlide";
 import ProjectShowcaseSlide from "../../slide-project-showcase/component.ProjectShowcaseSlide";
-import getSlides from '../fetchData/FetchData';
 import SlideProjectShowcaseInfo from '../../../json/showcaseProjecten.json';
 
 function Slideshow({SecondsBetweenSlides}) {
@@ -49,14 +48,14 @@ function Slideshow({SecondsBetweenSlides}) {
     CurrentSlide: 'Debugslide',
     VideoAtributes: videoProps
   };
-  // const SlideProjectShowcaseInfo = {
-  //   Project: 'Open-ICT info scherm',
-  //   Squad: 'Jesse, Owens, Timo, Ishak, Milan, Wail',
-  //   Details: 'Dit project moesten wij informatie van de Open-ICT laten zien op een fysiek scherm.',
-  //   Opdrachtgever: 'Inge/Bernard',
-  //   Src: { src: "images/testimage.jpg" },
-  //   Alt: 'This is a test image'
-  // };
+  const SlideProjectShowcaseInfo = {
+    Project: 'Open-ICT info scherm',
+    Squad: 'Jesse, Owens, Timo, Ishak, Milan, Wail',
+    Details: 'Dit project moesten wij informatie van de Open-ICT laten zien op een fysiek scherm.',
+    Opdrachtgever: 'Inge/Bernard',
+    Src: { src: "images/testimage.jpg" },
+    Alt: 'This is a test image'
+  };
   
   const slideData = [
     {
