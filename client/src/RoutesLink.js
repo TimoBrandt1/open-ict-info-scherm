@@ -8,6 +8,9 @@ import SlideAanpassen from "./pages/SlideAanpassen";
 import SlideBeheer from "./pages/SlideBeheer";
 import GroepBeheer from "./pages/GroepBeheer";
 import GroepAanpassen from "./pages/GroepAanpassen";
+import Settings from "./pages/Settings";
+import Formulieren from "./pages/Formulieren";
+import Screen from "./pages/Screen";
 
 //End of Pages import
 
@@ -26,9 +29,14 @@ const RoutesLink = () => {
       <Route exact path="/groep-beheer" element={<GroepBeheer />} />
       {/* Import Routes here : */}
       <Route exact path="/groep-aanpassen" element={<GroepAanpassen />} />
+      {/* Import Routes here : */}
+      <Route exact path="/settings" element={<Settings />} />
+      {/* Import Routes here : */}
+      <Route exact path="/formulieren" element={<Formulieren />} />
+      {/* Import Routes here : */}
+      <Route exact path="/screen" element={<Screen />} />
     </Routes>
   );
 };
 
 export default RoutesLink;
-//hi

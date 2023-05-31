@@ -26,7 +26,7 @@ import {
   AiOutlineSetting,
 } from "react-icons/ai";
 import { SDivider } from "../Layout/styles";
-import { MdAreaChart, MdLogout } from "react-icons/md";
+import { MdBackupTable, MdLogout, MdAssignment, MdAspectRatio, MdDashboardCustomize } from "react-icons/md";
 
 import { ThemeContext } from "./../../App";
 import { useLocation } from "react-router";
@@ -92,12 +92,20 @@ const Sidebar = () => {
         );
       })}
       <SDivider />
-      {secondaryLinksArray.map(({ icon, label }) => {
+      {secondaryLinksArray.map(({ icon, label, notification, to }) => {
         return (
-          <SLinkContainer key={label}>
-            <SLink to="/" style={!sidebarOpen ? { width: `fit-content` } : {}}>
+          <SLinkContainer key={label} isActive={pathname === to}>
+            <SLink to={to} style={!sidebarOpen ? { width: `fit-content` } : {}}>
               <SLinkIcon>{icon}</SLinkIcon>
-              {sidebarOpen && <SLinkLabel>{label}</SLinkLabel>}
+              {sidebarOpen && (
+                <>
+                  <SLinkLabel>{label}</SLinkLabel>
+                  {/* If notification is 0, do not display : */}
+                  {!!notification && (
+                    <SLinkNotification>{notification}</SLinkNotification>
+                  )}
+                </>
+              )}
             </SLink>
           </SLinkContainer>
         );
@@ -124,15 +132,27 @@ const linksArray = [
     notification: 0,
   },
   {
-    label: "Slides",
-    icon: <MdAreaChart />,
-    to: "/slide-beheer",
-    notification: 2,
+    label: "Groepen",
+    icon: <MdDashboardCustomize />,
+    to: "/groep-beheer",
+    notification: 0,
   },
   {
-    label: "Groepen",
-    icon: <AiOutlineHome />,
-    to: "/??",
+    label: "Slides",
+    icon: <MdBackupTable />,
+    to: "/slide-beheer",
+    notification: 1,
+  },
+  {
+    label: "Formulieren",
+    icon: <MdAssignment />,
+    to: "/formulieren",
+    notification: 0,
+  },
+  {
+    label: "Scherm",
+    icon: <MdAspectRatio />,
+    to: "/screen",
     notification: 0,
   },
 ];
@@ -141,6 +161,8 @@ const secondaryLinksArray = [
   {
     label: "Settings",
     icon: <AiOutlineSetting />,
+    to: "/settings",
+    notification: 0,
   },
   {
     label: "Logout",

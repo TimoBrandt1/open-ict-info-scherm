@@ -1,6 +1,9 @@
 import React from 'react';
-import './style.GroepOverzicht.scss';
+import {  SContainer} from "./styles";
+import './style.GroepOverzicht.scss'
 import { useState, useEffect } from 'react'
+
+import Swal from 'sweetalert2'
 
 import {TempData} from '../TempData.js';
 
@@ -8,9 +11,8 @@ import {TempData} from '../TempData.js';
 
 
 
-
-
 function GroepOverzicht() {
+
   // //fetches array 'groups'
   // const [groups, setData] = useState([]); //array of objects
   // const getData = async () => {
@@ -34,11 +36,13 @@ function GroepOverzicht() {
   useEffect(() => {
     setData(TempData);
     setGroups(TempData);
+
   }, []);
 
 
   function addSort(filter) {
     document.getElementById("sorteren").value = filter
+    sort(filter)
   }
 
 
@@ -76,11 +80,9 @@ function GroepOverzicht() {
   console.log("Searching for "+searchInput)
 
   let filteredArray = new Array();
-  console.log(filteredArray)
-  console.log("^^^")
-  
+
   Array.from(Array(groupsOrder.length).keys()).map((id) => {
-    if (groupsOrder[id].spreker.toLowerCase().includes(searchInput)) {
+    if (groupsOrder[id].titel.toLowerCase().includes(searchInput)) {
       filteredArray.push (groupsOrder[id])
     }
   })
@@ -89,12 +91,34 @@ function GroepOverzicht() {
   };
 
 
+  const Alert = () =>{
+    Swal.fire({
+      title: 'Weet je het zeker?',
+      text: "Je kunt dit niet ongedaan maken!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Ja, verwijder het!',
+      cancelButtonText: 'Annuleren'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Verwijderd!',
+          'De groep is verwijderd',
+          'success'
+        )
+      }
+    })
+  }
+
+
   return (
     <div className="groepOverzicht">
       
-      <container>  
+      <SContainer>  
       <div className='filters'>
-        <select class="input" name="sorteren" id="sorteren" onChange={(event) => addSort(event.target.value)& sort(event.target.value)}>
+        <select class="input" name="sorteren" id="sorteren" onChange={(event) => addSort(event.target.value)}>
           <option value="A+">Alfabetisch (A-Z)</option>
           <option value="A-">Alfabetisch (Z-A)</option>
           <option value="D+">Datum (vroegst eerst)</option>
@@ -106,9 +130,9 @@ function GroepOverzicht() {
         {Array.from(Array(groupsOrder.length).keys()).map((id) => (
                 <scr>
                   <div className='scherm'>
-                  <a href={ '/groep-aanpassen?GroepId=' + groupsOrder[id].id }><div class='optie' >E</div></a>
-                    <div class='optie'>i</div>
-                    <div class='optie'>D</div>
+                  <a href={ '/groep-aanpassen?GroepId=' + groupsOrder[id].id }><button class='optie' >E</button></a>
+                    <button class='optie'>i</button>
+                    <button className='optie' onClick={Alert}>D</button>
                   </div>
                   
                     <br/>{(groupsOrder[id].titel)}
@@ -118,7 +142,7 @@ function GroepOverzicht() {
             ))}
       </div>
 
-      </container>
+      </SContainer>
     </div>
   );
 }

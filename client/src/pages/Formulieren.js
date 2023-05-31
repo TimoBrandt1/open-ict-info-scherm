@@ -1,12 +1,12 @@
 import React from "react";
-import GroepAanpassen from '../components/groep-edit/component.GroepEdit';
+import FormKennisdeling from '../components/forms/FormKennisdeling';
 import GlobalThemeFetcher from '../components/global-theme-fetcher/component.GlobalThemeFetcher';
 
 const SlideBeheer = () => {
   return (
     <div>
-    <GlobalThemeFetcher/>
-      <GroepAanpassen src="/groep-edit"/>
+      <GlobalThemeFetcher/>
+      <FormKennisdeling src="/FormKennisdeling"/>
     </div>
   )
 };

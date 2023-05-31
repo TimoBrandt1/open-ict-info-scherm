@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import './style.SlideShow_Logic.scss';
 import DebugSlide from '../../debug-slide/component.DebugSlide';
 import KennisDelingSlide from "../../kennisdeling-slide/component.KennisdelingSlide";
-import getSlides from '../fetchData/FetchData';
 
 function Slideshow({SecondsBetweenSlides}) {
   // Slides information, should later be moved to other file.
@@ -48,54 +47,33 @@ function Slideshow({SecondsBetweenSlides}) {
     VideoAtributes: videoProps
   };
   
-  const slideData = [
-    {
-      Subject: data1.onderwerp || "",
-      Speaker: data1.spreker || "",
-      Location: data1.locatie || "",
-      Time: data1.tijd || "",
-      Datum: data1.datum || "",
-      Details: data1.details || ""
-    },
-    {
-      Subject: data2.onderwerp || "",
-      Speaker: data2.spreker || "",
-      Location: data2.locatie || "",
-      Time: data2.tijd || "",
-      Datum: data2.datum || "",
-      Details: data2.details || ""
-    },
-    {
-      Subject: data1.onderwerp || "",
-      Speaker: data1.spreker || "",
-      Location: data1.locatie || "",
-      Time: data1.tijd || "",
-      Datum: data1.datum || "",
-      Details: data1.details || ""
-    },
-    {
-      Subject: data2.onderwerp || "",
-      Speaker: data2.spreker || "",
-      Location: data2.locatie || "",
-      Time: data2.tijd || "",
-      Datum: data2.datum || "",
-      Details: data2.details || ""
-    }
-  ];
+  const kennisDelingInfo = {
+    Subject: data1.onderwerp || "",
+    Speaker: data1.spreker || "",
+    Location: data1.locatie || "",
+    Time: data1.tijd || "",
+    Datum: data1.datum || "",
+    Details: data1.details || ""
+  };
+
+  const kennisDelingInfoDupe = {
+    Subject: data2.onderwerp || "",
+    Speaker: data2.spreker || "",
+    Location: data2.locatie || "",
+    Time: data2.tijd || "",
+    Datum: data2.datum || "",
+    Details: data2.details || ""
+  };
   
-  // Array of slides
   const slides = [
     <DebugSlide {...debugSlideInfo} />,
-    <KennisDelingSlide slideData={slideData} />,
+    <KennisDelingSlide/>,
+    // <KennisDelingSlide {...kennisDelingInfo} />,
     // <KennisDelingSlide {...kennisDelingInfoDupe} />
   ];
   
-  // Index of the currently displayed slide
   const [currentIndex, setCurrentIndex] = useState(0);
-
-
-  // Automatically switch to the next slide after a specified number of seconds,
-  // and allow manual navigation using arrow keys
+  
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       getData(13, setData1);
