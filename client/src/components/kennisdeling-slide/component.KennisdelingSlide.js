@@ -3,20 +3,16 @@ import './style.KennisdelingSlide.scss';
 import MainTitle from '../main-title/component.MainTitle'
 import TextBlock from '../text-block/component.TextBlock'
 
-function KennisDelingSlide({slideData}) {
+function KennisDelingSlide({Subject,Speaker,Location,Time,Datum,Details}) {
   return (
-    <div className="kennisdeling-wrapper">
+    <div class="kennisdeling-wrapper">
       <MainTitle titleText={"Kennisdeling Page"} titleSize={'h1'} className={"main-title"}/>
-      {slideData.map((slide, index) => (
-        <div className={`kennisdeling-${index+1}`} key={index}>
-          <TextBlock blockText={"Subject: "+ slide.Subject} titleSize={'h3'}/>
-          <TextBlock blockText={"Speaker: "+ slide.Speaker} titleSize={'h3'}/>
-          <TextBlock blockText={"Location: "+ slide.Location} titleSize={'h3'}/>
-          <TextBlock blockText={"Time: "+ slide.Time} titleSize={'h3'}/>
-          <TextBlock blockText={"Datum: "+ slide.Datum} titleSize={'h3'}/>
-          <TextBlock blockText={"Details: "+ slide.Details} titleSize={'h3'}/>
-        </div>
-      ))}
+      <TextBlock blockText={"Subject: "+ Subject} titleSize={'h3'}/>
+      <TextBlock blockText={"Speaker: "+ Speaker} titleSize={'h3'}/>
+      <TextBlock blockText={"Location: "+ Location} titleSize={'h3'}/>
+      <TextBlock blockText={"Time: "+ Time} titleSize={'h3'}/>
+      <TextBlock blockText={"Datum: "+ Datum} titleSize={'h3'}/>
+      <TextBlock blockText={"Details: "+ Details} titleSize={'h3'}/>
     </div>
   );
 }
