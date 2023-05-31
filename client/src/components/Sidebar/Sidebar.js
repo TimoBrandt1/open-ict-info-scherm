@@ -42,7 +42,7 @@ const Sidebar = () => {
       setSidebarOpen(true);
       searchRef.current.focus();
     } else {
-      //Search functionality yes
+      //Search functionality
     }
   };
 
