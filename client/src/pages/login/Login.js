@@ -2,6 +2,7 @@ import { useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from "./context/AuthProvider";
 import axios from '../registration/api/axios';
 import './style.Login.scss'
+import GlobalThemeFetcher from '../../components/global-theme-fetcher/component.GlobalThemeFetcher';
 
 
 const LOGIN_URL = '/auth';
@@ -69,6 +70,7 @@ const Login = () => {
                 </section>
             ) : (
                 <div className="loginbg">
+                    <GlobalThemeFetcher/>
                     <div className="containerbox">
                 <section classname= "box1">
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>

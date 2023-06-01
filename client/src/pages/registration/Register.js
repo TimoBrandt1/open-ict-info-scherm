@@ -3,6 +3,7 @@ import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from './api/axios';
 import "./style.registration.scss"
+import GlobalThemeFetcher from '../../components/global-theme-fetcher/component.GlobalThemeFetcher';
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -83,7 +84,7 @@ const Register = () => {
     }
 
     return (
-        <>
+        <><GlobalThemeFetcher/>
             {success ? (
                 <section>
                     <h1>Success!</h1>
