@@ -4,6 +4,18 @@ body{
 background-repeat: no-repeat;
 height: 100%;
 }
+
+.projectshowcase-wrapper {
+  position: absolute;
+  z-index: 100;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: white;
+  padding: 30px;
+}
+
 Image{
   position: absolute;
   top: 0;

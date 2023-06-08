@@ -19,6 +19,7 @@ html {
     display: flex;
 }
 
+.registerbg {
 .containerbox {
     position: absolute;
     top: 50%;
@@ -184,4 +185,6 @@ button {
 ::placeholder {
     font-size: 12px;
     padding-left: 10px;
+}
+
 }

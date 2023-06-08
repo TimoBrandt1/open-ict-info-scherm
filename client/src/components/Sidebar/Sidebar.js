@@ -110,7 +110,7 @@ const Sidebar = () => {
           </SLinkContainer>
         );
       })}
-      <SDivider />
+      {/* <SDivider />
       <STheme>
         {sidebarOpen && <SThemeLabel>Dark Mode</SThemeLabel>}
         <SThemeToggler
@@ -119,7 +119,7 @@ const Sidebar = () => {
         >
           <SToggleThumb style={theme === "dark" ? { right: "1px" } : {}} />
         </SThemeToggler>
-      </STheme>
+      </STheme> */}
     </SSidebar>
   );
 };

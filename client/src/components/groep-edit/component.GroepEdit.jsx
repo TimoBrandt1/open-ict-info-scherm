@@ -32,6 +32,8 @@ function getGroepContent(naam, slides) {
       <input id='naam' class="input" type="text" placeholder="Naam..."/><br/>
       Slides:
       <input id='slides' class="input" type="text" placeholder="ID slides..."/>(Geef ID van slides, gescheiden met komma.)<br/>
+    
+    <button></button>
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import React from 'react'
+import './style.Forms.scss';
 import { Form, Button, Popup } from 'semantic-ui-react'
 import { useState } from 'react'
+import {SEnter} from './styles'
 
 
 // go to ./FormTest.js to see how to use this component
@@ -66,8 +68,8 @@ function FormBasic({initialValues, storageKeyPrefix}) {
                             </Form.Field>
                         ))}
 
-                        <Button type='submit'>Submit</Button>
-                        <Button type='reset'>Cancel</Button>
+                        <SEnter type='submit'>Submit</SEnter>
+                        <SEnter type='reset'>Cancel</SEnter>
                     </Form>
                 )}
             />

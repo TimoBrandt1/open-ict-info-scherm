@@ -16,14 +16,22 @@ html, body{
 //     object-fit: cover;
 // }
 .kennisdeling-wrapper {
+  position: absolute;
+  z-index: 100;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     height: 100vh;
+
   
     .kennisdeling-1 {
-      background-color: red;
+      background-color: rgb(224, 60, 60);
       width: 50%;
       height: 50%;
       display: flex;
@@ -33,7 +41,7 @@ html, body{
     }
   
     .kennisdeling-2 {
-      background-color: blue;
+      background-color: rgb(89, 89, 219);
       width: 50%;
       height: 50%;
       display: flex;
@@ -43,7 +51,7 @@ html, body{
     }
   
     .kennisdeling-3 {
-      background-color: green;
+      background-color: rgb(67, 174, 67);
       width: 50%;
       height: 50%;
       display: flex;
@@ -53,7 +61,7 @@ html, body{
     }
   
     .kennisdeling-4 {
-      background-color: yellow;
+      background-color: rgb(254, 235, 109);
       width: 50%;
       height: 50%;
       display: flex;

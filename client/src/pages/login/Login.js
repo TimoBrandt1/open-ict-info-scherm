@@ -72,7 +72,7 @@ const Login = () => {
                 <div className="loginbg">
                     <GlobalThemeFetcher/>
                     <div className="containerbox">
-                <section classname= "box1">
+                <section className= "box1">
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1 className='inloggen'>Bestaand account</h1>
                     <form onSubmit={handleSubmit}>
