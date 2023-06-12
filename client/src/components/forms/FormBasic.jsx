@@ -3,7 +3,7 @@ import './style.Forms.scss';
 import { Form, Button, Popup } from 'semantic-ui-react'
 import { useState } from 'react'
 import {SEnter} from './styles'
-
+import KennisdelingenJSON from '../../json/kennisdelingen.json';
 
 // go to ./FormTest.js to see how to use this component
 
@@ -18,26 +18,12 @@ function FormBasic({initialValues, storageKeyPrefix}) {
 
     console.log(formValues);
 
-    const saveData = () => { // save the data to local storage with the prefix
-            // make post request to server
-            fetch('http://145.89.192.107/api/kennisdeling', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formValues)
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Success:', data);
-                        setFormSubmitted(true);
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                    }
-                );
-
-    }
+    const saveData = () => {
+        const updatedData = [...KennisdelingenJSON, formValues]; // Assuming `jsonFileData` contains the existing JSON data
+      
+        console.log('Updated Data:', updatedData);
+        setFormSubmitted(true);
+      };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -73,7 +59,6 @@ function FormBasic({initialValues, storageKeyPrefix}) {
                     </Form>
                 )}
             />
-            <Button href="/formscreen">Go to Screen</Button>
         </div>
     );
 };
