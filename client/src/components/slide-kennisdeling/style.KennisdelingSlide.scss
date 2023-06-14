@@ -16,6 +16,7 @@ html, body{
 //     object-fit: cover;
 // }
 .kennisdeling-wrapper {
+  background-color: white;
   position: absolute;
   z-index: 100;
   left: 0px;
@@ -23,59 +24,89 @@ html, body{
   top: 0px;
   bottom: 0px;
 
+    height: 100vh;
+
+    .kennisdeling-miniwrapper {
+      width: 100%;
+      position: absolute;
+      height: 88%;
+      top: 12%;
+      
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    }
+  
+    .kennisdeling {
+      width: 50%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      padding: 10px;
+      border-radius: 30px;
+    }
 
-  
-    .kennisdeling-1 {
-      background-color: rgb(224, 60, 60);
-      width: 50%;
-      height: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    .primary {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color: #13A0DA;
+      color: white;
+      border-radius: 30px;
+      text-align: center;
     }
+
+    // .kennisdeling-1 {
+    //   background-color: rgb(224, 60, 60);
+    //   width: 50%;
+    //   height: 50%;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
   
-    .kennisdeling-2 {
-      background-color: rgb(89, 89, 219);
-      width: 50%;
-      height: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+    // .kennisdeling-2 {
+    //   background-color: rgb(89, 89, 219);
+    //   width: 50%;
+    //   height: 50%;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
   
-    .kennisdeling-3 {
-      background-color: rgb(67, 174, 67);
-      width: 50%;
-      height: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+    // .kennisdeling-3 {
+    //   background-color: rgb(67, 174, 67);
+    //   width: 50%;
+    //   height: 50%;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
   
-    .kennisdeling-4 {
-      background-color: rgb(254, 235, 109);
-      width: 50%;
-      height: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+    // .kennisdeling-4 {
+    //   background-color: rgb(254, 235, 109);
+    //   width: 50%;
+    //   height: 50%;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
   
     .main-title {
+      background-color: #E72B27;
+      color: white;
       position: absolute;
+      height: 12%;
       top: 0;
       left: 0;
       right: 0;
       text-align: center;
-      font-size: 3rem;
+      font-size: 2rem;
+      padding-top: 15px;
     }
   }
