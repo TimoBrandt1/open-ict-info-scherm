@@ -9,7 +9,7 @@
     text-align: left;
 }
 
-scr {
+.overzicht-wrapper {
     padding: 5px;
     display: inline-block;
     width: 20em;
@@ -57,3 +57,102 @@ SContainer {
     border-radius: 1em;
     border: none;
 }}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px; /* Increase the padding value as per your preference */
+    border-radius: 8px;
+    width: 50%; /* Adjust the width of the popup */
+    height: auto; /* Adjust the height of the popup */
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .confirm-button {
+    margin-right: 10px;
+    padding: 10px;
+    background-color: darkblue;
+    color: white;
+  }
+  
+  .cancel-button {
+    background-color: red;
+    padding: 10px;
+    color: white;
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+  
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+  
+    input {
+      padding: 8px;
+      margin: 0px;
+      border: 1px solid black;
+      border-radius: 4px;
+      /* Add any other desired styles */
+    }
+  }
+  
+  .check-icon {
+    margin-left: 5px;
+  }
+  
+  .full-width-select {
+    width: 100%;
+  }
+
+  .slides-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 10px;
+  
+    th {
+      background-color: #f2f2f2;
+      padding: 8px;
+      font-weight: bold;
+    }
+  
+    td {
+      padding: 8px;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  
+    input[type="checkbox"] {
+      margin-left: 8px;
+    }
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+    max-height: 200px;
+  }

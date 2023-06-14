@@ -3,7 +3,7 @@ import './style.GroepEdit.scss';
 import { useState, useEffect } from 'react'
 import { useLocation } from "react-router-dom"
 
-import {TempData} from '../TempData.js';
+import GroupJSON from '../../json/groups.json';
 
 
 
@@ -15,7 +15,7 @@ function GroepEdit() {
 
 
 useEffect(() => {
-  getGroepContent(TempData[groepNR].titel, TempData[groepNR].slides);
+  getGroepContent(GroupJSON[groepNR].titel, GroupJSON[groepNR].slides);
 }, []);
 
 function getGroepContent(naam, slides) {
