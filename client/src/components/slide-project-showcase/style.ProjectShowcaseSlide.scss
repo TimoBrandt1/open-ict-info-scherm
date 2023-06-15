@@ -13,7 +13,13 @@ height: 100%;
   top: 0px;
   bottom: 0px;
   background-color: white;
-  padding: 30px;
+
+  .main-title{
+    padding-top: 30px;
+    height: 12%;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 Image{
@@ -23,4 +29,20 @@ Image{
   width: 70%;
   height: 70%;
   object-fit: cover;
+}
+
+.Left{
+  height: 88%;
+  width: 40%;
+  left: 0px;
+  position: absolute;
+  padding: 30px;
+}
+
+.Right{
+  height: 88%;
+  width: 60%;
+  right: 0px;
+  position: absolute;
+  padding: 30px;
 }

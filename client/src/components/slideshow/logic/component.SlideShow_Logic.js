@@ -52,7 +52,7 @@ function Slideshow({SecondsBetweenSlides}) {
       getData(13, setData1);
       getData(17, setData2);
       setCurrentIndex((currentIndex + 1) % slides.length);
-    }, SecondsBetweenSlides*1000);
+    }, SecondsBetweenSlides*3000);
 
     const handleKeyDown = (event) => {
       if (event.keyCode === 37) { // Left arrow key
