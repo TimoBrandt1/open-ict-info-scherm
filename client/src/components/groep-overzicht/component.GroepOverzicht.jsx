@@ -6,25 +6,27 @@ import Modal from "react-modal";
 import Swal from 'sweetalert2';
 import GroupJSON from '../../json/groups.json';
 import SlidesJSON from '../../json/slides.json'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 Modal.setAppElement('#root');
 
 function GroepOverzicht() {
-  const [groups, setData] = useState(GroupJSON); // array of objects
-  const [groupsOrder, setGroups] = useState(groups);
+  const [groups, setGroups] = useState([]);
+  const [groupsOrder, setGroupsOrder] = useState([]);
   const [lastID, setLastID] = useState(0); // New state to store the last ID
 
   useEffect(() => {
-    setData(GroupJSON);
     setGroups(GroupJSON);
+    setGroupsOrder(GroupJSON);
     console.log('Groups after deletion:', groups);
 
     // Calculate the last ID whenever the groups are updated
     const ids = GroupJSON.map((group) => group.id);
     const maxID = Math.max(...ids);
     setLastID(maxID + 1);
+  }, []);
+
+  useEffect(() => {
+    setGroupsOrder(groups);
   }, [groups]);
 
   function addSort(filter) {
@@ -64,15 +66,11 @@ function GroepOverzicht() {
     const searchInput = document.getElementById("searchInput").value.toLowerCase();
     console.log("Searching for " + searchInput);
 
-    let filteredArray = new Array();
+    let filteredArray = groupsOrder.filter((group) =>
+      group.titel.toLowerCase().includes(searchInput)
+    );
 
-    Array.from(Array(groupsOrder.length).keys()).map((id) => {
-      if (groupsOrder[id].titel.toLowerCase().includes(searchInput)) {
-        filteredArray.push(groupsOrder[id]);
-      }
-    });
-
-    setGroups(filteredArray);
+    setGroupsOrder(filteredArray);
   }
 
   const handleDelete = (id) => {
@@ -88,7 +86,9 @@ function GroepOverzicht() {
     }).then((result) => {
       if (result.isConfirmed) {
         console.log('Groups before deletion:', groups); // Debug log before deletion
-        setGroups((prevGroups) => prevGroups.filter((GroupJSON) => GroupJSON.id !== id));
+        const updatedGroups = groups.filter((group) => group.id !== id);
+        setGroups(updatedGroups);
+        setGroupsOrder(updatedGroups);
         Swal.fire(
           'Verwijderd!',
           'De groep is verwijderd',
@@ -104,22 +104,47 @@ function GroepOverzicht() {
     id: "",
     titel: "",
     datum: "",
+    slides: []
+  });
+
+  let AddNewGroup = false;
+  //Popup Edit Group
+  const [isEditing, setIsEditing] = useState(false);
+  const [editGroupData, setEditGroupData] = useState({
+    id: "",
+    titel: "",
+    datum: "",
     slides: ""
   });
 
   const handleAddGroup = () => {
+    AddNewGroup = true;
+    setIsEditing(false);
     setIsModalOpen(true);
-  
+
     // Find the maximum ID in the group JSON
     const maxID = Math.max(...GroupJSON.map((group) => Number(group.id)));
-  
+
     // Generate the new ID by incrementing the maximum ID
     const newID = String(maxID + 1);
-  
+
     setNewGroupData((prevData) => ({
       ...prevData,
       id: newID
     }));
+  };
+
+  const handleEdit = (group) => {
+    AddNewGroup = false;
+    setIsEditing(true);
+    setEditGroupData(group);
+    setIsModalOpen(true);
+    setNewGroupData({
+      id: group.id,
+      titel: group.titel,
+      datum: group.datum,
+      slides: group.slides.split(", ")
+    });
   };
 
   const handleModalClose = () => {
@@ -128,13 +153,13 @@ function GroepOverzicht() {
 
   const handleInputChange = (event) => {
     const { name, value, type, checked } = event.target;
-  
+
     if (name === "slides") {
       const slideId = value;
       const updatedSlides = newGroupData.slides.includes(slideId)
         ? newGroupData.slides.filter((id) => id !== slideId)
         : [...newGroupData.slides, slideId];
-  
+
       setNewGroupData((prevData) => ({
         ...prevData,
         [name]: updatedSlides
@@ -148,27 +173,37 @@ function GroepOverzicht() {
   };
 
   const handleConfirmAddGroup = () => {
-      // Filter only the selected slides
+    let updatedGroups;
     const selectedSlides = SlidesJSON.filter((slide) =>
-    newGroupData.slides.includes(slide.id)
+      newGroupData.slides.includes(slide.id)
     );
 
-    // Create a new group object with the selected slides
-    const newGroup = {
-      id: newGroupData.id,
-      titel: newGroupData.titel,
-      datum: getCurrentDate(),
-      slides: selectedSlides.map((slide) => slide.id).join(", ") // Convert slide objects to slide IDs
-    };
+    if (isEditing) {
+      const editedGroup = {
+        id: editGroupData.id,
+        titel: newGroupData.titel,
+        datum: newGroupData.datum,
+        slides: selectedSlides.map((slide) => slide.id).join(", ")
+      };
 
-    // Update the state with the new group
-    setGroups((prevGroups) => [...prevGroups, newGroup]);
+      updatedGroups = groups.map((group) =>
+        group.id === editedGroup.id ? editedGroup : group
+      );
+    } else {
+      const newGroup = {
+        id: newGroupData.id,
+        titel: newGroupData.titel,
+        datum: getCurrentDate(),
+        slides: selectedSlides.map((slide) => slide.id).join(", ")
+      };
+
+      updatedGroups = [...groups, newGroup];
+    }
+    setGroups(updatedGroups);
+    setGroupsOrder(updatedGroups);
+    setIsEditing(false);
     setIsModalOpen(false);
-
-    // Update the GroupJSON variable with the new group
-    GroupJSON.push(newGroup);
-
-    console.log('Group JSON after adding a new group:', GroupJSON); // Log the updated GroupJSON
+    console.log('Groups after adding/editing a group:', updatedGroups);
   };
 
   function getCurrentDate() {
@@ -178,6 +213,19 @@ function GroepOverzicht() {
     const day = String(currentDate.getDate()).padStart(2, '0');
     return `${day}-${month}-${year}`;
   }
+
+  const handleShowGroup = (group) => {
+    const slides = group.slides.split(", ").map((slideId) => {
+      const slide = SlidesJSON.find((slide) => slide.id === slideId);
+      return slide ? slide.name : "";
+    });
+
+    Swal.fire({
+      title: group.titel,
+      html: `<p>Datum: ${group.datum}</p><p>Slides: ${slides.join(", ")}</p>`,
+      confirmButtonText: "Close",
+    });
+  };
 
   return (
     <div className="groepOverzicht">
@@ -198,7 +246,7 @@ function GroepOverzicht() {
             className="modal"
             overlayClassName="modal-overlay"
           >
-            <h2>New Group</h2>
+            <h2>{isEditing ? "Editing Group" : "New Group"}</h2>
             <form>
               <div className="input-group">
                 <label htmlFor="titel">Title:</label>
@@ -249,7 +297,7 @@ function GroepOverzicht() {
                   placeholder="Date"
                   value={getCurrentDate()}
                   onChange={handleInputChange}
-                  readOnly 
+                  readOnly
                 />
               </div>
               <div className="input-group">
@@ -261,7 +309,7 @@ function GroepOverzicht() {
                   placeholder="ID"
                   value={newGroupData.id}
                   onChange={handleInputChange}
-                  readOnly 
+                  readOnly
                 />
               </div>
               <div className="modal-buttons">
@@ -272,21 +320,18 @@ function GroepOverzicht() {
           </Modal>
         </div>
         <div id='overzicht'>
-          {Array.from(Array(groupsOrder.length).keys()).map((id) => (
-            <div key={id} className="overzicht-wrapper">
-              <div className='scherm'>
-                <a href={'/groep-aanpassen?GroepId=' + groupsOrder[id].id}><button className='optie'>E</button></a>
-                <button className='optie'>i</button>
-                <button className="optie" onClick={() => handleDelete(groupsOrder[id].id)}>D</button>
+            {groupsOrder.map((group) => (
+              <div key={group.id} className="overzicht-wrapper">
+                <div className="scherm">
+                  <button className="optie" onClick={() => handleEdit(group)}>E</button>
+                  <button className="optie" onClick={() => handleShowGroup(group)}>I</button>
+                  <button className="optie" onClick={() => handleDelete(group.id)}>D</button>
+                </div>
+                <br />{group.titel}
+                <br />{group.datum}
               </div>
-
-              <br />{(groupsOrder[id].titel)}
-              <br />{(groupsOrder[id].datum)}
-
-            </div>
-          ))}
+            ))}
         </div>
-
       </SContainer>
     </div>
   );
