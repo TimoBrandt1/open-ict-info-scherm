@@ -12,7 +12,6 @@ Modal.setAppElement('#root');
 function GroepOverzicht() {
   const [groups, setGroups] = useState([]);
   const [groupsOrder, setGroupsOrder] = useState([]);
-  const [lastID, setLastID] = useState(0); // New state to store the last ID
 
   useEffect(() => {
     setGroups(GroupJSON);
@@ -22,7 +21,6 @@ function GroepOverzicht() {
     // Calculate the last ID whenever the groups are updated
     const ids = GroupJSON.map((group) => group.id);
     const maxID = Math.max(...ids);
-    setLastID(maxID + 1);
   }, []);
 
   useEffect(() => {
@@ -123,7 +121,7 @@ function GroepOverzicht() {
     setIsModalOpen(true);
 
     // Find the maximum ID in the group JSON
-    const maxID = Math.max(...GroupJSON.map((group) => Number(group.id)));
+    const maxID = Math.max(...groups.map((group) => Number(group.id)));
 
     // Generate the new ID by incrementing the maximum ID
     const newID = String(maxID + 1);
