@@ -6,6 +6,7 @@ import ProjectShowcaseSlide from "../../slide-project-showcase/component.Project
 import SlideProjectShowcaseInfo from '../../../json/showcaseProjecten.json';
 import KennisDelingSlideInfo from '../../../json/kennisdelingen.json';
 import DebugSlideInfo from '../../../json/debugSlideInfo.json';
+import KennisdelingSlide2 from '../../../components/slide-kennisdeling/KennisdelingSlide2'
 
 function Slideshow({SecondsBetweenSlides}) {
   // Slides information, should later be moved to other file.
@@ -37,6 +38,7 @@ function Slideshow({SecondsBetweenSlides}) {
   const slides = [
     <DebugSlide {...DebugSlideInfo} />,
     <KennisDelingSlide slideData={KennisDelingSlideInfo} />,
+    <KennisdelingSlide2 slideData={KennisDelingSlideInfo} />,
     <ProjectShowcaseSlide {...SlideProjectShowcaseInfo}/>
     // <KennisDelingSlide {...kennisDelingInfoDupe} />
   ];
