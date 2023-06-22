@@ -10,7 +10,6 @@ function ProjectShowcaseSlide2({slideData}) {
     <div className="projectshowcase-container">
         <div className="projectshowcase-bar">
             <div class="projectshowcase-logo">
-                <img src="./projectshowcase1.png" alt="Open-ICT logo" />
             </div>   
             <div class="projectshowcase-headline">
                 <h3><span class="project">Project</span><span class="showcase">Showcase</span></h3>
@@ -19,7 +18,6 @@ function ProjectShowcaseSlide2({slideData}) {
 
         <div className="projectshowcase-grid">
             <div className="projectshowcase-foto">
-            <img src="projectshowcase1.png" alt="Open-ICT logo" />
             </div>
             <div className="projectshowcase-info">
                 <div className="projectshowcase-gegevens1">

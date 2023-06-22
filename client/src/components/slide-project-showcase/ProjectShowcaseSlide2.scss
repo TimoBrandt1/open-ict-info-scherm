@@ -30,9 +30,11 @@
                 padding: 2%;
             }
 
-            .projectshowcase-logo img {
-                width: 150px;
-                height: 125px;
+            .projectshowcase-logo {
+                background-image: url('../../assets/open-ict-logo.png');
+                width: 100px;
+                height: 90px;
+                background-size: cover;
             }
 
             .projectshowcase-headline {
@@ -55,6 +57,14 @@
                 color: #ef4129;
             }
 
+
+            .projectshowcase-foto {
+                background-image: url('./projectshowcase1.png');
+                height: 100%;
+                width: 100%;
+                background-position: center;
+                background-size: cover;
+            }
 
             .projectshowcase-grid{
                 display: grid;
