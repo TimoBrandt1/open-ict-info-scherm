@@ -7,6 +7,7 @@ import SlideProjectShowcaseInfo from '../../../json/showcaseProjecten.json';
 import KennisDelingSlideInfo from '../../../json/kennisdelingen.json';
 import DebugSlideInfo from '../../../json/debugSlideInfo.json';
 import KennisdelingSlide2 from '../../../components/slide-kennisdeling/KennisdelingSlide2'
+import ProjectShowcaseSlide2 from '../../slide-project-showcase/ProjectShowcaseSlide2'
 
 function Slideshow({SecondsBetweenSlides}) {
   // Slides information, should later be moved to other file.
@@ -39,7 +40,9 @@ function Slideshow({SecondsBetweenSlides}) {
     <DebugSlide {...DebugSlideInfo} />,
     <KennisDelingSlide slideData={KennisDelingSlideInfo} />,
     <KennisdelingSlide2 slideData={KennisDelingSlideInfo} />,
-    <ProjectShowcaseSlide {...SlideProjectShowcaseInfo}/>
+    <ProjectShowcaseSlide {...SlideProjectShowcaseInfo}/>,
+    <ProjectShowcaseSlide2 {...ProjectShowcaseSlide2}/>
+
     // <KennisDelingSlide {...kennisDelingInfoDupe} />
   ];
   
@@ -54,7 +57,7 @@ function Slideshow({SecondsBetweenSlides}) {
       getData(13, setData1);
       getData(17, setData2);
       setCurrentIndex((currentIndex + 1) % slides.length);
-    }, SecondsBetweenSlides*3000);
+    }, SecondsBetweenSlides*300000);
 
     const handleKeyDown = (event) => {
       if (event.keyCode === 37) { // Left arrow key
