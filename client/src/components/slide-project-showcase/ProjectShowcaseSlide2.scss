@@ -10,7 +10,7 @@
 
 .projectshowcase-container {
     background-color: #f9f6f3;
-    height: 100vh;
+    height: auto;
     position: absolute;
     left: 0px;
     right: 0px;
@@ -71,9 +71,12 @@
                 grid-template-columns: 30% 60%;
                 grid-template-rows: 1fr;
                 grid-column-gap: 10%;
-                padding-left: 10%;
-                padding-right: 5%;
-                padding-top: 5%;
+                // padding-left: 10%;
+                // padding-right: 5%;
+                // padding-top: 5%;
+                padding: 5%;
+                zoom: 75%;
+
             
             }
 

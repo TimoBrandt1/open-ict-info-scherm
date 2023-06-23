@@ -9,7 +9,6 @@ function KennisDelingSlide({slideData}) {
     <div class="kennisdelingslide-container">
         <div class="kennisdelingslide-bar">
             <div class="kennisdeling-logo">
-                <img src="open-ict-logo.png" alt="Open-ICT logo" />
             </div>   
             <div class="kennisdelingslide-headline">
                 <h3><span class="kennis">Kennis</span><span class="delingen">delingen</span></h3>
