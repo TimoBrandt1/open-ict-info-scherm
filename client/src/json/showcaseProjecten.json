@@ -1,11 +1,25 @@
+[
 {
     "Project": "Open-ICT info scherm",
-    "Squad": "Jesse, Owens, Timo, Ishak, Milan, Wail",
+    "Squad": "Jesse, Owens, Timo, Ishak, Milan en Wail",
     "Details": "Dit project moesten wij informatie van de Open-ICT laten zien op een fysiek scherm.",
     "Opdrachtgever": "Inge/Bernard",
     "Src": {
-      "src": "images/testimage.jpg"
+      "src": "https://cdn.discordapp.com/attachments/1072075137899315230/1121756292386664578/IMG_5563.jpg"
+    },
+    "Alt": "This is a test image"
+  },
+
+  {
+    "Project": "BattleBot",
+    "Squad": "Rick, Xander, Ruben, Lars en Pieter",
+    "Details": "Stap in de ring en laat je overweldigen door de spanning en sensatie van de ultieme mechanische strijd! Battlebots nemen het tegen elkaar op in een epische clash van vernuft, technologie en brute kracht. Bereid je voor op onvergetelijke gevechten en adembenemende tactische manoeuvres. Mis het niet, het is absoluut meeslepend!",
+    "Opdrachtgever": "Loek",
+    "Src": {
+      "src": "https://media.discordapp.net/attachments/1070412306401460376/1121464951899443281/IMG_20230622_171932.jpg"
     },
     "Alt": "This is a test image"
   }
+
+]
   

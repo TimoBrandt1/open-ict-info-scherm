@@ -10,7 +10,7 @@
 
 .projectshowcase-container {
     background-color: #f9f6f3;
-    height: auto;
+    height: 100vh;
     position: absolute;
     left: 0px;
     right: 0px;
@@ -58,13 +58,13 @@
             }
 
 
-            .projectshowcase-foto {
-                background-image: url('./projectshowcase1.png');
-                height: 100%;
-                width: 100%;
-                background-position: center;
-                background-size: cover;
-            }
+            // .projectshowcase-foto {
+            //     background-image: url('./projectshowcase1.png');
+            //     height: 100%;
+            //     width: 100%;
+            //     background-position: center;
+            //     background-size: cover;
+            // }
 
             .projectshowcase-grid{
                 display: grid;
@@ -75,16 +75,30 @@
                 // padding-right: 5%;
                 // padding-top: 5%;
                 padding: 5%;
-                zoom: 75%;
+                zoom: 65%;
 
             
             }
 
 
-            .projectshowcase-foto {
-                background-color: white;
+            // .projectshowcase-foto {
+            //     background-color: purple;
+            //     border-radius: 47% 53% 70% 30% / 54% 56% 44% 46% ;
+            //     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            //     height: 100%;
+            //     width: 100%;
+            //     background-position: center;
+            //     background-size: cover;
+            // }
+
+            .image-projectshowcase img {
                 border-radius: 47% 53% 70% 30% / 54% 56% 44% 46% ;
                 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                height: 100%;
+                width: 100%;
+                background-position: center;
+                background-size: cover;
+
             }
 
             .projectshowcase-info {

@@ -5,6 +5,7 @@ import KennisDelingSlide from "../../slide-kennisdeling/component.KennisdelingSl
 import ProjectShowcaseSlide from "../../slide-project-showcase/component.ProjectShowcaseSlide";
 import SlideProjectShowcaseInfo from '../../../json/showcaseProjecten.json';
 import KennisDelingSlideInfo from '../../../json/kennisdelingen.json';
+import KennisDelingSlideInfo2 from '../../../json/kennisdelingen2.json';
 import DebugSlideInfo from '../../../json/debugSlideInfo.json';
 import KennisdelingSlide2 from '../../../components/slide-kennisdeling/KennisdelingSlide2'
 import ProjectShowcaseSlide2 from '../../slide-project-showcase/ProjectShowcaseSlide2'
@@ -38,10 +39,17 @@ function Slideshow({SecondsBetweenSlides}) {
   // Array of slides
   const slides = [
     <DebugSlide {...DebugSlideInfo} />,
-    <KennisDelingSlide slideData={KennisDelingSlideInfo} />,
+    // <KennisDelingSlide slideData={KennisDelingSlideInfo} />,
     <KennisdelingSlide2 slideData={KennisDelingSlideInfo} />,
-    <ProjectShowcaseSlide {...SlideProjectShowcaseInfo}/>,
-    <ProjectShowcaseSlide2 {...ProjectShowcaseSlide2}/>
+    // <KennisdelingSlide2 slideData={KennisDelingSlideInfo2} />,
+    // <ProjectShowcaseSlide {...SlideProjectShowcaseInfo}/>,
+    <ProjectShowcaseSlide2 {...SlideProjectShowcaseInfo[0]}/>,
+    <ProjectShowcaseSlide2 {...SlideProjectShowcaseInfo[1]}/>
+ 
+
+
+
+
 
     // <KennisDelingSlide {...kennisDelingInfoDupe} />
   ];
@@ -57,7 +65,7 @@ function Slideshow({SecondsBetweenSlides}) {
       getData(13, setData1);
       getData(17, setData2);
       setCurrentIndex((currentIndex + 1) % slides.length);
-    }, SecondsBetweenSlides*300000);
+    }, SecondsBetweenSlides*1500);
 
     const handleKeyDown = (event) => {
       if (event.keyCode === 37) { // Left arrow key

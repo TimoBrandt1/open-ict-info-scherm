@@ -1,9 +1,13 @@
 import React from 'react';
 import './style.Image.scss';
 
-function Image({Src, Alt}) {
+function Image({Src, Alt, ClassName}) {
   return (
-      <img src={process.env.PUBLIC_URL + Src?.src} alt={Alt}/>
+      <div className={ClassName}>
+      <img src={process.env.PUBLIC_URL + Src?.src} alt={Alt}/> 
+      </div>
+
+      
   );
 }
 

@@ -73,9 +73,9 @@
 
 .kennisdeling-container {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 30% 66%;
     grid-template-rows: 1fr;
-    grid-column-gap: 0px;
+    grid-column-gap: 4%;
     grid-row-gap: 0px;
     background-color: white;
     padding: 2vw;
@@ -83,6 +83,13 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+.kennisdeling-plaatje img {
+    height: 100%;
+    width: 100%;
+    border-radius: 2vw;
+    background-size: cover;
+    background-position: center;
+}
 .kennisdeling-info{
     display: flex;
     flex-direction: column;
