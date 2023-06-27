@@ -1,11 +1,16 @@
 [
       {
       "Subject": "AI",
-      "Speaker": "Ishak, Wail",
+      "Speaker": "Ishak en Wail",
       "Location": "Hogeschool Utrecht",
       "Time": "11:45",
       "Datum": "1 Juni",
-      "Details": "Wees bang want AI!"
+      "Details": "Wees bang want AI!",
+      "Src": {
+        "src": 
+        "https://cdn.discordapp.com/attachments/1072075137899315230/1121753705939730472/artificial-intelligence-robot-control-futuristic-royalty-free-image-1677597964.png"
+      },
+      "Alt": "This is a test image"
     },
     {
       "Subject": "Machine Learning",
@@ -13,7 +18,12 @@
       "Location": "Hogeschool Utrecht",
       "Time": "10:20",
       "Datum": "7 Juni",
-      "Details": "Machine learning uitgelecht"
+      "Details": "Machine learning uitgelecht",
+      "Src": {
+        "src": 
+        "https://cdn.discordapp.com/attachments/1072075137899315230/1121753776521478294/kunstmatige-intelligentie-ai-toolshero.png"
+      },
+      "Alt": "This is a test image"
     },
     {
       "Subject": "Back end",
@@ -21,7 +31,11 @@
       "Location": "Hogeschool Utrecht",
       "Time": "11:00",
       "Datum": "13 July",
-      "Details": "Informatie over back end"
+      "Details": "Informatie over back end",
+      "Src": {
+        "src": "https://cdn.discordapp.com/attachments/1072075137899315230/1121753902430306395/Z.png"
+      },
+      "Alt": "This is a test image"
     },
     {
       "Subject": "Front end",
@@ -29,6 +43,11 @@
       "Location": "Hogeschool Utrecht",
       "Time": "09:15",
       "Datum": "28 July",
-      "Details": "Dit gaat over front end, wees er bij"
+      "Details": "Dit gaat over front end, wees er bij",
+      "Src": {
+        "src": 
+        "https://cdn.discordapp.com/attachments/1072075137899315230/1121753846339862630/Mobile-UI-Design-Inspiration-Examples-How-To.png"
+      },
+      "Alt": "This is a test image"
     }
   ]
