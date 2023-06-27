@@ -10,4 +10,5 @@ export const SContainer = styled.div`
   display: inline-block;
   width: fit-content;
   border-radius: 2em;
+  
 `;

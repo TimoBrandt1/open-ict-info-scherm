@@ -1,14 +1,17 @@
 [
     {
       "id": "1",
-      "name": "KennisDeling Slide"
+      "name": "KennisDeling Slide",
+      "datum":"25-04-23"
     },
     {
       "id": "2",
-      "name": "Project showcase slide"
+      "name": "Project showcase slide",
+      "datum":"25-04-23"
     },
     {
       "id": "3",
-      "name": "Debug Slide"
+      "name": "Debug Slide",
+      "datum":"25-04-23"
     }
   ]
