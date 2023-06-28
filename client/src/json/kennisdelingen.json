@@ -8,7 +8,7 @@
       "Details": "Wees bang want AI!",
       "Src": {
         "src": 
-        "https://cdn.discordapp.com/attachments/1072075137899315230/1121753705939730472/artificial-intelligence-robot-control-futuristic-royalty-free-image-1677597964.png"
+        "images/MachineLearning.png"
       },
       "Alt": "This is a test image"
     },
@@ -21,7 +21,7 @@
       "Details": "Machine learning uitgelecht",
       "Src": {
         "src": 
-        "https://cdn.discordapp.com/attachments/1072075137899315230/1121753776521478294/kunstmatige-intelligentie-ai-toolshero.png"
+        "images/AI.png"
       },
       "Alt": "This is a test image"
     },
@@ -33,7 +33,7 @@
       "Datum": "13 July",
       "Details": "Informatie over back end",
       "Src": {
-        "src": "https://cdn.discordapp.com/attachments/1072075137899315230/1121753902430306395/Z.png"
+        "src": "images/Database.png"
       },
       "Alt": "This is a test image"
     },
@@ -46,7 +46,7 @@
       "Details": "Dit gaat over front end, wees er bij",
       "Src": {
         "src": 
-        "https://cdn.discordapp.com/attachments/1072075137899315230/1121753846339862630/Mobile-UI-Design-Inspiration-Examples-How-To.png"
+        "images/ChatBox.png"
       },
       "Alt": "This is a test image"
     }
