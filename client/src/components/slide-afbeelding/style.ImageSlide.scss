@@ -1,0 +1,19 @@
+.image-content {
+    position: absolute;
+    z-index: 100;
+    top:    0px;
+    bottom: 0px;
+    left:   0px;
+    right:  0px;
+    background-color: #f9f6f3;
+    margin: 0;
+    padding: 0;
+}
+
+.image-bernard {
+    background-image: url('./Rooster.png');
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}

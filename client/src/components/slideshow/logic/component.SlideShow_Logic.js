@@ -9,6 +9,7 @@ import KennisDelingSlideInfo2 from '../../../json/kennisdelingen2.json';
 import DebugSlideInfo from '../../../json/debugSlideInfo.json';
 import KennisdelingSlide2 from '../../../components/slide-kennisdeling/KennisdelingSlide2'
 import ProjectShowcaseSlide2 from '../../slide-project-showcase/ProjectShowcaseSlide2'
+import AfbeeldingSlide from '../../slide-afbeelding/component.ImageSlide'
 
 function Slideshow({SecondsBetweenSlides}) {
   // Slides information, should later be moved to other file.
@@ -44,7 +45,8 @@ function Slideshow({SecondsBetweenSlides}) {
     // <KennisdelingSlide2 slideData={KennisDelingSlideInfo2} />,
     // <ProjectShowcaseSlide {...SlideProjectShowcaseInfo}/>,
     <ProjectShowcaseSlide2 {...SlideProjectShowcaseInfo[0]}/>,
-    <ProjectShowcaseSlide2 {...SlideProjectShowcaseInfo[1]}/>
+    <ProjectShowcaseSlide2 {...SlideProjectShowcaseInfo[1]}/>,
+    <AfbeeldingSlide {...AfbeeldingSlide}/>
  
 
 
